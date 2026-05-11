@@ -1,0 +1,376 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\controllers\\optimizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\controllers\\optimizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\database\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\database\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\database\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\database\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\optimizadormodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\optimizadormodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\services\\optimizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\services\\optimizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\services\\cotizacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\services\\cotizacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\detallecotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\detallecotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\tapacanto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\tapacanto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\industriasap.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\industriasap.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\services\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\services\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\servicioexterno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\servicioexterno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\piezacorte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\piezacorte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\herraje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\herraje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\cotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\cotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|c:\\users\\usuario\\documents\\programas desarrollados\\c#\\industriasap\\industriasap\\industriasap.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{DEA354B5-ABF0-EFA7-34DC-FB2B38C8AA31}|IndustriasAP\\IndustriasAP.csproj|solutionrelative:industriasap\\industriasap.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Database\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Database\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Database\\AppDbContext.cs",
+              "RelativeToolTip": "IndustriasAP\\Database\\AppDbContext.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T16:23:18.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OptimizerController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Controllers\\OptimizerController.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Controllers\\OptimizerController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Controllers\\OptimizerController.cs",
+              "RelativeToolTip": "IndustriasAP\\Controllers\\OptimizerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T15:40:38.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Tapacanto.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Tapacanto.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\Tapacanto.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Tapacanto.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\Tapacanto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T22:57:51.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Program.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Program.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Program.cs",
+              "RelativeToolTip": "IndustriasAP\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T23:32:00.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DatabaseConnection.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Database\\DatabaseConnection.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Database\\DatabaseConnection.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Database\\DatabaseConnection.cs",
+              "RelativeToolTip": "IndustriasAP\\Database\\DatabaseConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T23:57:45.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OptimizadorModels.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\OptimizadorModels.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\OptimizadorModels.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\OptimizadorModels.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\OptimizadorModels.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAqwEEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T02:33:09.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OptimizerService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Services\\OptimizerService.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Services\\OptimizerService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Services\\OptimizerService.cs",
+              "RelativeToolTip": "IndustriasAP\\Services\\OptimizerService.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAqwHYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T02:39:23.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Usuario.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T22:56:38.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CotizacionService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Services\\CotizacionService.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Services\\CotizacionService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Services\\CotizacionService.cs",
+              "RelativeToolTip": "IndustriasAP\\Services\\CotizacionService.cs",
+              "ViewState": "AgIAANUAAACAlpmZmZkRwI0AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T04:55:44.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "IndustriasAP\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T05:49:51.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DetalleCotizacion.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\DetalleCotizacion.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\DetalleCotizacion.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\DetalleCotizacion.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\DetalleCotizacion.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T22:59:41.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IndustriasAP.csproj",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\IndustriasAP.csproj",
+              "RelativeDocumentMoniker": "IndustriasAP\\IndustriasAP.csproj",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\IndustriasAP.csproj",
+              "RelativeToolTip": "IndustriasAP\\IndustriasAP.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-07T22:26:13.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ServicioExterno.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\ServicioExterno.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\ServicioExterno.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\ServicioExterno.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\ServicioExterno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T22:58:35.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PiezaCorte.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\PiezaCorte.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\PiezaCorte.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\PiezaCorte.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\PiezaCorte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T22:59:22.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Material.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Material.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\Material.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Material.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\Material.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T22:57:12.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ClienteService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Services\\ClienteService.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Services\\ClienteService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Services\\ClienteService.cs",
+              "RelativeToolTip": "IndustriasAP\\Services\\ClienteService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T23:03:44.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Controllers\\ClientesController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "IndustriasAP\\Controllers\\ClientesController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T23:04:18.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Inventario.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Inventario.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\Inventario.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Inventario.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\Inventario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T23:00:01.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Herraje.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Herraje.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\Herraje.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Herraje.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\Herraje.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T22:57:29.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Cotizacion.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Cotizacion.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\Cotizacion.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Cotizacion.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\Cotizacion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T22:59:00.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "IndustriasAP\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\Models\\Cliente.cs",
+              "RelativeToolTip": "IndustriasAP\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T22:56:09.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IndustriasAP",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\IndustriasAP.csproj",
+              "RelativeDocumentMoniker": "IndustriasAP\\IndustriasAP.csproj",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\PROGRAMAS DESARROLLADOS\\C#\\IndustriasAP\\IndustriasAP\\IndustriasAP.csproj",
+              "RelativeToolTip": "IndustriasAP\\IndustriasAP.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-07T23:35:01.939Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
