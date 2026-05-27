@@ -18,6 +18,7 @@ namespace InsutriasAP.Database
 
             modelBuilder.Entity<Optimizacion>(entity =>
             {
+                entity.ToTable("optimizaciones");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).HasColumnName("id");
                 entity.Property(e => e.Nombre).HasColumnName("nombre").HasMaxLength(200).IsRequired(false);
