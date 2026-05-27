@@ -11,6 +11,7 @@ export default function Materiales() {
   const [editando,    setEditando]    = useState(null)
   const [form,        setForm]        = useState(formInicial)
   const [buscar,      setBuscar]      = useState('')
+  const [unidadGrosor, setUnidadGrosor] = useState('mm')
 
   const cargar = async () => {
     try {
@@ -29,6 +30,7 @@ export default function Materiales() {
   const abrirNuevo = () => {
     setEditando(null)
     setForm(formInicial)
+    setUnidadGrosor('mm')
     setMostrarForm(true)
   }
 
@@ -42,15 +44,19 @@ export default function Materiales() {
       ancho: m.ancho,
       precioTablero: m.precioTablero
     })
+    setUnidadGrosor('mm')
     setMostrarForm(true)
   }
 
   const guardar = async (e) => {
     e.preventDefault()
     try {
+      const grosorMm = unidadGrosor === 'in'
+        ? parseFloat(form.grosor) * 25.4
+        : parseFloat(form.grosor)
       const datos = {
         ...form,
-        grosor:        parseFloat(form.grosor),
+        grosor:        grosorMm,
         largo:         parseFloat(form.largo),
         ancho:         parseFloat(form.ancho),
         precioTablero: parseFloat(form.precioTablero)
@@ -123,13 +129,29 @@ export default function Materiales() {
               />
             </div>
             <div>
-              <label className="block text-sm text-gray-600 mb-1">Grosor (mm)</label>
-              <input
-                type="number"
-                value={form.grosor}
-                onChange={e => setForm({ ...form, grosor: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <label className="block text-sm text-gray-600 mb-1">Grosor</label>
+              <div className="flex gap-2">
+                <input
+                  type="number"
+                  step="0.001"
+                  value={form.grosor}
+                  onChange={e => setForm({ ...form, grosor: e.target.value })}
+                  className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <select
+                  value={unidadGrosor}
+                  onChange={e => { setUnidadGrosor(e.target.value); setForm({ ...form, grosor: '' }) }}
+                  className="border border-gray-300 rounded px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="mm">mm</option>
+                  <option value="in">pulg</option>
+                </select>
+              </div>
+              {unidadGrosor === 'in' && form.grosor && (
+                <p className="text-xs text-gray-400 mt-1">
+                  = {(parseFloat(form.grosor) * 25.4).toFixed(2)} mm
+                </p>
+              )}
             </div>
             <div>
               <label className="block text-sm text-gray-600 mb-1">Largo (mm)</label>
