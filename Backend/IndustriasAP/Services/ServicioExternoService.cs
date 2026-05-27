@@ -20,7 +20,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, proveedor, costo, created_at FROM ServiciosExternos";
+                string query = "SELECT id, nombre, proveedor, costo, created_at FROM serviciosexternos";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 using var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -43,7 +43,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, proveedor, costo, created_at FROM ServiciosExternos WHERE id = @Id";
+                string query = "SELECT id, nombre, proveedor, costo, created_at FROM serviciosexternos WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -67,7 +67,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO ServiciosExternos (nombre, proveedor, costo) VALUES (@Nombre, @Proveedor, @Costo)";
+                string query = "INSERT INTO serviciosexternos (nombre, proveedor, costo) VALUES (@Nombre, @Proveedor, @Costo)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",    servicio.Nombre);
                 cmd.Parameters.AddWithValue("@Proveedor", servicio.Proveedor);
@@ -81,7 +81,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE ServiciosExternos SET nombre=@Nombre, proveedor=@Proveedor, costo=@Costo WHERE id=@Id";
+                string query = "UPDATE serviciosexternos SET nombre=@Nombre, proveedor=@Proveedor, costo=@Costo WHERE id=@Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",    servicio.Nombre);
                 cmd.Parameters.AddWithValue("@Proveedor", servicio.Proveedor);
@@ -96,7 +96,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "DELETE FROM ServiciosExternos WHERE id = @Id";
+                string query = "DELETE FROM serviciosexternos WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;

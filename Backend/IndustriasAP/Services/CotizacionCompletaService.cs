@@ -33,9 +33,9 @@ namespace InsutriasAP.Services
                     cl.telefono AS cliente_telefono,
                     cl.email    AS cliente_email,
                     u.nombre    AS usuario_nombre
-                FROM Cotizaciones c
-                LEFT JOIN Clientes cl ON cl.id = c.cliente_id
-                LEFT JOIN Usuarios u  ON u.id  = c.usuario_id
+                FROM cotizaciones c
+                LEFT JOIN clientes cl ON cl.id = c.cliente_id
+                LEFT JOIN usuarios u  ON u.id  = c.usuario_id
                 WHERE c.id = @Id";
 
             var cmdCot = new MySqlCommand(queryCotizacion, conn);
@@ -77,7 +77,7 @@ namespace InsutriasAP.Services
                        cm.cantidad_planchas, cm.porcentaje_uso, cm.precio_unitario, cm.subtotal,
                        m.nombre AS material_nombre
                 FROM cotizacion_materiales cm
-                LEFT JOIN Materiales m ON m.id = cm.material_id
+                LEFT JOIN materiales m ON m.id = cm.material_id
                 WHERE cm.cotizacion_id = @Id
                 ORDER BY cm.created_at";
             var cmdMat = new MySqlCommand(queryMateriales, conn);
@@ -104,8 +104,8 @@ namespace InsutriasAP.Services
                 SELECT p.id, p.nombre_pieza, p.material_id, p.largo, p.ancho,
                        p.cantidad, p.metro_tapacanto, p.costo_material,
                        m.nombre AS material_nombre
-                FROM PiezasCorte p
-                LEFT JOIN Materiales m ON m.id = p.material_id
+                FROM piezascorte p
+                LEFT JOIN materiales m ON m.id = p.material_id
                 WHERE p.cotizacion_id = @Id";
             var cmdPiezas = new MySqlCommand(queryPiezas, conn);
             cmdPiezas.Parameters.AddWithValue("@Id", cotizacionId);
@@ -130,8 +130,8 @@ namespace InsutriasAP.Services
             const string queryHerrajes = @"
                 SELECT dh.id, dh.herraje_id, dh.cantidad, dh.precio_unitario, dh.subtotal,
                        h.nombre AS herraje_nombre, h.marca AS herraje_marca
-                FROM DetalleHerrajes dh
-                LEFT JOIN Herrajes h ON h.id = dh.herraje_id
+                FROM detalleherrajes dh
+                LEFT JOIN herrajes h ON h.id = dh.herraje_id
                 WHERE dh.cotizacion_id = @Id";
             var cmdHerrajes = new MySqlCommand(queryHerrajes, conn);
             cmdHerrajes.Parameters.AddWithValue("@Id", cotizacionId);
@@ -154,8 +154,8 @@ namespace InsutriasAP.Services
             const string queryServicios = @"
                 SELECT ds.id, ds.servicio_id, ds.cantidad, ds.precio, ds.subtotal,
                        s.nombre AS servicio_nombre, s.proveedor AS servicio_proveedor
-                FROM DetalleServicios ds
-                LEFT JOIN ServiciosExternos s ON s.id = ds.servicio_id
+                FROM detalleservicios ds
+                LEFT JOIN serviciosexternos s ON s.id = ds.servicio_id
                 WHERE ds.cotizacion_id = @Id";
             var cmdServicios = new MySqlCommand(queryServicios, conn);
             cmdServicios.Parameters.AddWithValue("@Id", cotizacionId);

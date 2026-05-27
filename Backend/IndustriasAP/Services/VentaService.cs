@@ -165,7 +165,7 @@ namespace InsutriasAP.Services
                 if (d.InventarioId.HasValue)
                 {
                     var cmdStock = new MySqlCommand(
-                        "UPDATE Inventario SET cantidad = cantidad - @Cant WHERE id = @Id",
+                        "UPDATE inventario SET cantidad = cantidad - @Cant WHERE id = @Id",
                         conn);
                     cmdStock.Parameters.AddWithValue("@Cant", d.Cantidad);
                     cmdStock.Parameters.AddWithValue("@Id",   d.InventarioId.Value);

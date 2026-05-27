@@ -20,7 +20,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, marca, precio_unitario, estado, created_at FROM Herrajes WHERE estado = 1";
+                string query = "SELECT id, nombre, marca, precio_unitario, estado, created_at FROM herrajes WHERE estado = 1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 using var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -44,7 +44,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, marca, precio_unitario, estado, created_at FROM Herrajes WHERE id = @Id AND estado = 1";
+                string query = "SELECT id, nombre, marca, precio_unitario, estado, created_at FROM herrajes WHERE id = @Id AND estado = 1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -69,7 +69,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO Herrajes (nombre, marca, precio_unitario) VALUES (@Nombre, @Marca, @PrecioUnitario)";
+                string query = "INSERT INTO herrajes (nombre, marca, precio_unitario) VALUES (@Nombre, @Marca, @PrecioUnitario)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",         herraje.Nombre);
                 cmd.Parameters.AddWithValue("@Marca",          herraje.Marca);
@@ -83,7 +83,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Herrajes SET nombre=@Nombre, marca=@Marca, precio_unitario=@PrecioUnitario WHERE id=@Id AND estado=1";
+                string query = "UPDATE herrajes SET nombre=@Nombre, marca=@Marca, precio_unitario=@PrecioUnitario WHERE id=@Id AND estado=1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",         herraje.Nombre);
                 cmd.Parameters.AddWithValue("@Marca",          herraje.Marca);
@@ -98,7 +98,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Herrajes SET estado = 0 WHERE id = @Id";
+                string query = "UPDATE herrajes SET estado = 0 WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;

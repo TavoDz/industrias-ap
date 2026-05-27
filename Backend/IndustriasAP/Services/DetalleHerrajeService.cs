@@ -21,7 +21,7 @@ namespace InsutriasAP.Services
             {
                 conn.Open();
                 string query = @"SELECT id, cotizacion_id, herraje_id, cantidad, precio_unitario, subtotal
-                                 FROM DetalleHerrajes WHERE cotizacion_id = @CotizacionId";
+                                 FROM detalleherrajes WHERE cotizacion_id = @CotizacionId";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CotizacionId", cotizacionId);
                 using var reader = cmd.ExecuteReader();
@@ -36,7 +36,7 @@ namespace InsutriasAP.Services
             {
                 conn.Open();
                 string query = @"SELECT id, cotizacion_id, herraje_id, cantidad, precio_unitario, subtotal
-                                 FROM DetalleHerrajes WHERE id = @Id";
+                                 FROM detalleherrajes WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -54,7 +54,7 @@ namespace InsutriasAP.Services
                 // Obtener precio_unitario del herraje si no viene en el request
                 if (detalle.PrecioUnitario == 0)
                 {
-                    string queryPrecio = "SELECT precio_unitario FROM Herrajes WHERE id = @HerrajeId";
+                    string queryPrecio = "SELECT precio_unitario FROM herrajes WHERE id = @HerrajeId";
                     MySqlCommand cmdPrecio = new MySqlCommand(queryPrecio, conn);
                     cmdPrecio.Parameters.AddWithValue("@HerrajeId", detalle.HerrajeId);
                     var precio = cmdPrecio.ExecuteScalar();
@@ -63,7 +63,7 @@ namespace InsutriasAP.Services
 
                 detalle.Subtotal = detalle.Cantidad * detalle.PrecioUnitario;
 
-                string query = @"INSERT INTO DetalleHerrajes (cotizacion_id, herraje_id, cantidad, precio_unitario, subtotal)
+                string query = @"INSERT INTO detalleherrajes (cotizacion_id, herraje_id, cantidad, precio_unitario, subtotal)
                                  VALUES (@CotizacionId, @HerrajeId, @Cantidad, @PrecioUnitario, @Subtotal)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CotizacionId",   detalle.CotizacionId);
@@ -82,7 +82,7 @@ namespace InsutriasAP.Services
                 conn.Open();
                 detalle.Subtotal = detalle.Cantidad * detalle.PrecioUnitario;
 
-                string query = @"UPDATE DetalleHerrajes SET herraje_id=@HerrajeId, cantidad=@Cantidad,
+                string query = @"UPDATE detalleherrajes SET herraje_id=@HerrajeId, cantidad=@Cantidad,
                                  precio_unitario=@PrecioUnitario, subtotal=@Subtotal WHERE id=@Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@HerrajeId",      detalle.HerrajeId);
@@ -99,7 +99,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "DELETE FROM DetalleHerrajes WHERE id = @Id";
+                string query = "DELETE FROM detalleherrajes WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;
@@ -111,7 +111,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "DELETE FROM DetalleHerrajes WHERE cotizacion_id = @CotizacionId";
+                string query = "DELETE FROM detalleherrajes WHERE cotizacion_id = @CotizacionId";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CotizacionId", cotizacionId);
                 return cmd.ExecuteNonQuery() > 0;

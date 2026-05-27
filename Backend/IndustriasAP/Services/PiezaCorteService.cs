@@ -22,7 +22,7 @@ namespace InsutriasAP.Services
                 conn.Open();
                 string query = @"SELECT id, cotizacion_id, nombre_pieza, material_id, largo, ancho,
                                  cantidad, metro_tapacanto, costo_material, created_at
-                                 FROM PiezasCorte WHERE cotizacion_id = @CotizacionId";
+                                 FROM piezascorte WHERE cotizacion_id = @CotizacionId";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CotizacionId", cotizacionId);
                 using var reader = cmd.ExecuteReader();
@@ -38,7 +38,7 @@ namespace InsutriasAP.Services
                 conn.Open();
                 string query = @"SELECT id, cotizacion_id, nombre_pieza, material_id, largo, ancho,
                                  cantidad, metro_tapacanto, costo_material, created_at
-                                 FROM PiezasCorte WHERE id = @Id";
+                                 FROM piezascorte WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -54,7 +54,7 @@ namespace InsutriasAP.Services
                 conn.Open();
                 pieza.CostoMaterial = CalcularCosto(conn, pieza);
 
-                string query = @"INSERT INTO PiezasCorte
+                string query = @"INSERT INTO piezascorte
                                  (cotizacion_id, nombre_pieza, material_id, largo, ancho, cantidad, metro_tapacanto, costo_material)
                                  VALUES (@CotizacionId, @NombrePieza, @MaterialId, @Largo, @Ancho, @Cantidad, @MetroTapacanto, @CostoMaterial)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -77,7 +77,7 @@ namespace InsutriasAP.Services
                 conn.Open();
                 pieza.CostoMaterial = CalcularCosto(conn, pieza);
 
-                string query = @"UPDATE PiezasCorte SET
+                string query = @"UPDATE piezascorte SET
                                  nombre_pieza=@NombrePieza, material_id=@MaterialId,
                                  largo=@Largo, ancho=@Ancho, cantidad=@Cantidad,
                                  metro_tapacanto=@MetroTapacanto, costo_material=@CostoMaterial
@@ -100,7 +100,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "DELETE FROM PiezasCorte WHERE id = @Id";
+                string query = "DELETE FROM piezascorte WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;
@@ -110,7 +110,7 @@ namespace InsutriasAP.Services
         // Fórmula: (largo_pieza × ancho_pieza × cantidad) / (largo_tablero × ancho_tablero) × precio_tablero
         private decimal CalcularCosto(MySqlConnection conn, PiezaCorte pieza)
         {
-            string query = "SELECT largo, ancho, precio_tablero FROM Materiales WHERE id = @MaterialId AND estado = 1";
+            string query = "SELECT largo, ancho, precio_tablero FROM materiales WHERE id = @MaterialId AND estado = 1";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@MaterialId", pieza.MaterialId);
             using var reader = cmd.ExecuteReader();

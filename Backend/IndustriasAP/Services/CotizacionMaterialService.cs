@@ -23,7 +23,7 @@ namespace InsutriasAP.Services
                        cm.cantidad_planchas, cm.porcentaje_uso, cm.precio_unitario, cm.subtotal,
                        m.nombre AS material_nombre
                 FROM cotizacion_materiales cm
-                LEFT JOIN Materiales m ON m.id = cm.material_id
+                LEFT JOIN materiales m ON m.id = cm.material_id
                 WHERE cm.cotizacion_id = @CotId
                 ORDER BY cm.created_at";
             var cmd = new MySqlCommand(sql, conn);
@@ -40,7 +40,7 @@ namespace InsutriasAP.Services
             conn.Open();
 
             decimal precioUnitario = 0;
-            var cmdPrecio = new MySqlCommand("SELECT precio_tablero FROM Materiales WHERE id = @Id", conn);
+            var cmdPrecio = new MySqlCommand("SELECT precio_tablero FROM materiales WHERE id = @Id", conn);
             cmdPrecio.Parameters.AddWithValue("@Id", materialId);
             var precioObj = cmdPrecio.ExecuteScalar();
             if (precioObj != null && precioObj != DBNull.Value)

@@ -338,7 +338,7 @@ namespace InsutriasAP.Services
             using var conn = _db.GetConnection();
             conn.Open();
             var cmd = new MySqlCommand(
-                "SELECT id, nombre, largo, ancho, precio_tablero FROM Materiales WHERE id=@Id AND estado=1", conn);
+                "SELECT id, nombre, largo, ancho, precio_tablero FROM materiales WHERE id=@Id AND estado=1", conn);
             cmd.Parameters.AddWithValue("@Id", id);
             using var r = cmd.ExecuteReader();
             if (!r.Read()) return null;

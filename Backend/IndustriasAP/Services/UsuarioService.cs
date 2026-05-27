@@ -48,7 +48,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, email, password_hash, rol, estado, created_at, updated_at FROM Usuarios WHERE estado = 1";
+                string query = "SELECT id, nombre, email, password_hash, rol, estado, created_at, updated_at FROM usuarios WHERE estado = 1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 using var reader = cmd.ExecuteReader();
                 while (reader.Read()) lista.Add(MapUsuario(reader));
@@ -61,7 +61,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, email, password_hash, rol, estado, created_at, updated_at FROM Usuarios WHERE id = @Id AND estado = 1";
+                string query = "SELECT id, nombre, email, password_hash, rol, estado, created_at, updated_at FROM usuarios WHERE id = @Id AND estado = 1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -75,7 +75,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, email, password_hash, rol, estado, created_at, updated_at FROM Usuarios WHERE email = @Email AND estado = 1";
+                string query = "SELECT id, nombre, email, password_hash, rol, estado, created_at, updated_at FROM usuarios WHERE email = @Email AND estado = 1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", email);
                 using var reader = cmd.ExecuteReader();
@@ -89,7 +89,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO Usuarios (nombre, email, password_hash, rol) VALUES (@Nombre, @Email, @PasswordHash, @Rol)";
+                string query = "INSERT INTO usuarios (nombre, email, password_hash, rol) VALUES (@Nombre, @Email, @PasswordHash, @Rol)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",       usuario.Nombre);
                 cmd.Parameters.AddWithValue("@Email",        usuario.Email);
@@ -104,7 +104,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Usuarios SET nombre=@Nombre, email=@Email, rol=@Rol WHERE id=@Id AND estado=1";
+                string query = "UPDATE usuarios SET nombre=@Nombre, email=@Email, rol=@Rol WHERE id=@Id AND estado=1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre", usuario.Nombre);
                 cmd.Parameters.AddWithValue("@Email",  usuario.Email);
@@ -119,7 +119,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Usuarios SET password_hash=@Hash WHERE id=@Id AND estado=1";
+                string query = "UPDATE usuarios SET password_hash=@Hash WHERE id=@Id AND estado=1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Hash", HashSHA256(nuevaPassword));
                 cmd.Parameters.AddWithValue("@Id",   id);
@@ -132,7 +132,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Usuarios SET estado = 0 WHERE id = @Id";
+                string query = "UPDATE usuarios SET estado = 0 WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;

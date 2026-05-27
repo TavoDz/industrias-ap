@@ -20,7 +20,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, telefono, email, direccion, estado, created_at FROM Clientes WHERE estado = 1";
+                string query = "SELECT id, nombre, telefono, email, direccion, estado, created_at FROM clientes WHERE estado = 1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 using var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -45,7 +45,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, telefono, email, direccion, estado, created_at FROM Clientes WHERE id = @Id AND estado = 1";
+                string query = "SELECT id, nombre, telefono, email, direccion, estado, created_at FROM clientes WHERE id = @Id AND estado = 1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -71,7 +71,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO Clientes (nombre, telefono, email, direccion) VALUES (@Nombre, @Telefono, @Email, @Direccion)";
+                string query = "INSERT INTO clientes (nombre, telefono, email, direccion) VALUES (@Nombre, @Telefono, @Email, @Direccion)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",    cliente.Nombre);
                 cmd.Parameters.AddWithValue("@Telefono",  cliente.Telefono);
@@ -86,7 +86,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Clientes SET nombre=@Nombre, telefono=@Telefono, email=@Email, direccion=@Direccion WHERE id=@Id AND estado=1";
+                string query = "UPDATE clientes SET nombre=@Nombre, telefono=@Telefono, email=@Email, direccion=@Direccion WHERE id=@Id AND estado=1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",    cliente.Nombre);
                 cmd.Parameters.AddWithValue("@Telefono",  cliente.Telefono);
@@ -102,7 +102,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Clientes SET estado = 0 WHERE id = @Id";
+                string query = "UPDATE clientes SET estado = 0 WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;

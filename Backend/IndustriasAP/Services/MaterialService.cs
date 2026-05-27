@@ -20,7 +20,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, tipo, grosor, largo, ancho, precio_tablero, estado, created_at FROM Materiales WHERE estado = 1";
+                string query = "SELECT id, nombre, tipo, grosor, largo, ancho, precio_tablero, estado, created_at FROM materiales WHERE estado = 1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 using var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -47,7 +47,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, tipo, grosor, largo, ancho, precio_tablero, estado, created_at FROM Materiales WHERE id = @Id AND estado = 1";
+                string query = "SELECT id, nombre, tipo, grosor, largo, ancho, precio_tablero, estado, created_at FROM materiales WHERE id = @Id AND estado = 1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -75,7 +75,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO Materiales (nombre, tipo, grosor, largo, ancho, precio_tablero) VALUES (@Nombre, @Tipo, @Grosor, @Largo, @Ancho, @PrecioTablero)";
+                string query = "INSERT INTO materiales (nombre, tipo, grosor, largo, ancho, precio_tablero) VALUES (@Nombre, @Tipo, @Grosor, @Largo, @Ancho, @PrecioTablero)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",        material.Nombre);
                 cmd.Parameters.AddWithValue("@Tipo",          material.Tipo);
@@ -92,7 +92,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Materiales SET nombre=@Nombre, tipo=@Tipo, grosor=@Grosor, largo=@Largo, ancho=@Ancho, precio_tablero=@PrecioTablero WHERE id=@Id AND estado=1";
+                string query = "UPDATE materiales SET nombre=@Nombre, tipo=@Tipo, grosor=@Grosor, largo=@Largo, ancho=@Ancho, precio_tablero=@PrecioTablero WHERE id=@Id AND estado=1";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",        material.Nombre);
                 cmd.Parameters.AddWithValue("@Tipo",          material.Tipo);
@@ -110,7 +110,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Materiales SET estado = 0 WHERE id = @Id";
+                string query = "UPDATE materiales SET estado = 0 WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;

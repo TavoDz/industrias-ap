@@ -24,7 +24,7 @@ namespace InsutriasAP.Services
                        subtotal_costos, monto_ganancia, porcentaje_ganancia, descuento, total,
                        estado, tipo_acabado, descripcion_general,
                        tiempo_estimado_dias, observaciones, terminos
-                FROM Cotizaciones
+                FROM cotizaciones
                 ORDER BY fecha DESC";
             var cmd = new MySqlCommand(sql, conn);
             using var r = cmd.ExecuteReader();
@@ -42,7 +42,7 @@ namespace InsutriasAP.Services
                        subtotal_costos, monto_ganancia, porcentaje_ganancia, descuento, total,
                        estado, tipo_acabado, descripcion_general,
                        tiempo_estimado_dias, observaciones, terminos
-                FROM Cotizaciones WHERE id = @Id";
+                FROM cotizaciones WHERE id = @Id";
             var cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@Id", id);
             using var r = cmd.ExecuteReader();
@@ -60,7 +60,7 @@ namespace InsutriasAP.Services
                        subtotal_costos, monto_ganancia, porcentaje_ganancia, descuento, total,
                        estado, tipo_acabado, descripcion_general,
                        tiempo_estimado_dias, observaciones, terminos
-                FROM Cotizaciones WHERE cliente_id = @ClienteId ORDER BY fecha DESC";
+                FROM cotizaciones WHERE cliente_id = @ClienteId ORDER BY fecha DESC";
             var cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@ClienteId", clienteId);
             using var r = cmd.ExecuteReader();
@@ -73,7 +73,7 @@ namespace InsutriasAP.Services
             using var conn = db.GetConnection();
             conn.Open();
             const string sql = @"
-                INSERT INTO Cotizaciones
+                INSERT INTO cotizaciones
                     (cliente_id, usuario_id, total_materiales, total_herrajes, total_servicios,
                      total_mano_obra, subtotal_costos, monto_ganancia, porcentaje_ganancia, descuento, total,
                      estado, tipo_acabado, descripcion_general, tiempo_estimado_dias, observaciones, terminos)
@@ -98,7 +98,7 @@ namespace InsutriasAP.Services
         {
             using var conn = db.GetConnection();
             conn.Open();
-            var cmd = new MySqlCommand("UPDATE Cotizaciones SET estado = @Estado WHERE id = @Id", conn);
+            var cmd = new MySqlCommand("UPDATE cotizaciones SET estado = @Estado WHERE id = @Id", conn);
             cmd.Parameters.AddWithValue("@Estado", estado);
             cmd.Parameters.AddWithValue("@Id",     id);
             return cmd.ExecuteNonQuery() > 0;
@@ -109,7 +109,7 @@ namespace InsutriasAP.Services
             using var conn = db.GetConnection();
             conn.Open();
             const string sql = @"
-                UPDATE Cotizaciones SET
+                UPDATE cotizaciones SET
                     descripcion_general  = @DescripcionGeneral,
                     tiempo_estimado_dias = @TiempoEstimadoDias,
                     observaciones        = @Observaciones,
@@ -129,7 +129,7 @@ namespace InsutriasAP.Services
             using var conn = db.GetConnection();
             conn.Open();
             const string sql = @"
-                UPDATE Cotizaciones SET
+                UPDATE cotizaciones SET
                     tipo_acabado       = @TipoAcabado,
                     porcentaje_ganancia = @Porcentaje
                 WHERE id = @Id";
@@ -145,27 +145,27 @@ namespace InsutriasAP.Services
             using var conn = db.GetConnection();
             conn.Open();
             const string sql = @"
-                UPDATE Cotizaciones c SET
+                UPDATE cotizaciones c SET
                     total_materiales = COALESCE((SELECT SUM(subtotal) FROM cotizacion_materiales WHERE cotizacion_id = c.id), 0),
-                    total_herrajes   = COALESCE((SELECT SUM(subtotal) FROM DetalleHerrajes       WHERE cotizacion_id = c.id), 0),
-                    total_servicios  = COALESCE((SELECT SUM(subtotal) FROM DetalleServicios      WHERE cotizacion_id = c.id), 0),
+                    total_herrajes   = COALESCE((SELECT SUM(subtotal) FROM detalleherrajes       WHERE cotizacion_id = c.id), 0),
+                    total_servicios  = COALESCE((SELECT SUM(subtotal) FROM detalleservicios      WHERE cotizacion_id = c.id), 0),
                     total_mano_obra  = COALESCE((SELECT SUM(costo)    FROM cotizacion_mano_obra  WHERE cotizacion_id = c.id), 0),
                     subtotal_costos  = (
                         COALESCE((SELECT SUM(subtotal) FROM cotizacion_materiales WHERE cotizacion_id = c.id), 0) +
-                        COALESCE((SELECT SUM(subtotal) FROM DetalleHerrajes       WHERE cotizacion_id = c.id), 0) +
-                        COALESCE((SELECT SUM(subtotal) FROM DetalleServicios      WHERE cotizacion_id = c.id), 0) +
+                        COALESCE((SELECT SUM(subtotal) FROM detalleherrajes       WHERE cotizacion_id = c.id), 0) +
+                        COALESCE((SELECT SUM(subtotal) FROM detalleservicios      WHERE cotizacion_id = c.id), 0) +
                         COALESCE((SELECT SUM(costo)    FROM cotizacion_mano_obra  WHERE cotizacion_id = c.id), 0)
                     ),
                     monto_ganancia   = (
                         COALESCE((SELECT SUM(subtotal) FROM cotizacion_materiales WHERE cotizacion_id = c.id), 0) +
-                        COALESCE((SELECT SUM(subtotal) FROM DetalleHerrajes       WHERE cotizacion_id = c.id), 0) +
-                        COALESCE((SELECT SUM(subtotal) FROM DetalleServicios      WHERE cotizacion_id = c.id), 0) +
+                        COALESCE((SELECT SUM(subtotal) FROM detalleherrajes       WHERE cotizacion_id = c.id), 0) +
+                        COALESCE((SELECT SUM(subtotal) FROM detalleservicios      WHERE cotizacion_id = c.id), 0) +
                         COALESCE((SELECT SUM(costo)    FROM cotizacion_mano_obra  WHERE cotizacion_id = c.id), 0)
                     ) * c.porcentaje_ganancia / 100,
                     total            = (
                         COALESCE((SELECT SUM(subtotal) FROM cotizacion_materiales WHERE cotizacion_id = c.id), 0) +
-                        COALESCE((SELECT SUM(subtotal) FROM DetalleHerrajes       WHERE cotizacion_id = c.id), 0) +
-                        COALESCE((SELECT SUM(subtotal) FROM DetalleServicios      WHERE cotizacion_id = c.id), 0) +
+                        COALESCE((SELECT SUM(subtotal) FROM detalleherrajes       WHERE cotizacion_id = c.id), 0) +
+                        COALESCE((SELECT SUM(subtotal) FROM detalleservicios      WHERE cotizacion_id = c.id), 0) +
                         COALESCE((SELECT SUM(costo)    FROM cotizacion_mano_obra  WHERE cotizacion_id = c.id), 0)
                     ) * (1 + c.porcentaje_ganancia / 100) - c.descuento
                 WHERE c.id = @Id";
@@ -178,7 +178,7 @@ namespace InsutriasAP.Services
         {
             using var conn = db.GetConnection();
             conn.Open();
-            var cmd = new MySqlCommand("UPDATE Cotizaciones SET descuento = @Descuento WHERE id = @Id", conn);
+            var cmd = new MySqlCommand("UPDATE cotizaciones SET descuento = @Descuento WHERE id = @Id", conn);
             cmd.Parameters.AddWithValue("@Descuento", descuento);
             cmd.Parameters.AddWithValue("@Id",        id);
             return cmd.ExecuteNonQuery() > 0;
@@ -188,7 +188,7 @@ namespace InsutriasAP.Services
         {
             using var conn = db.GetConnection();
             conn.Open();
-            var cmd = new MySqlCommand("UPDATE Cotizaciones SET estado = 'cancelada' WHERE id = @Id", conn);
+            var cmd = new MySqlCommand("UPDATE cotizaciones SET estado = 'cancelada' WHERE id = @Id", conn);
             cmd.Parameters.AddWithValue("@Id", id);
             return cmd.ExecuteNonQuery() > 0;
         }

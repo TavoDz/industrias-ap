@@ -20,7 +20,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, color, precio_metro, created_at FROM Tapacantos";
+                string query = "SELECT id, nombre, color, precio_metro, created_at FROM tapacantos";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 using var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -43,7 +43,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, nombre, color, precio_metro, created_at FROM Tapacantos WHERE id = @Id";
+                string query = "SELECT id, nombre, color, precio_metro, created_at FROM tapacantos WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -67,7 +67,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO Tapacantos (nombre, color, precio_metro) VALUES (@Nombre, @Color, @PrecioMetro)";
+                string query = "INSERT INTO tapacantos (nombre, color, precio_metro) VALUES (@Nombre, @Color, @PrecioMetro)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",      tapacanto.Nombre);
                 cmd.Parameters.AddWithValue("@Color",       tapacanto.Color);
@@ -81,7 +81,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Tapacantos SET nombre=@Nombre, color=@Color, precio_metro=@PrecioMetro WHERE id=@Id";
+                string query = "UPDATE tapacantos SET nombre=@Nombre, color=@Color, precio_metro=@PrecioMetro WHERE id=@Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nombre",      tapacanto.Nombre);
                 cmd.Parameters.AddWithValue("@Color",       tapacanto.Color);
@@ -96,7 +96,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "DELETE FROM Tapacantos WHERE id = @Id";
+                string query = "DELETE FROM tapacantos WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;

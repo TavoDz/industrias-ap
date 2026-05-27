@@ -20,7 +20,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, tipo_item, item_id, cantidad, minimo, updated_at FROM Inventario";
+                string query = "SELECT id, tipo_item, item_id, cantidad, minimo, updated_at FROM inventario";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 using var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -44,7 +44,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT id, tipo_item, item_id, cantidad, minimo, updated_at FROM Inventario WHERE id = @Id";
+                string query = "SELECT id, tipo_item, item_id, cantidad, minimo, updated_at FROM inventario WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -69,7 +69,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO Inventario (tipo_item, item_id, cantidad, minimo) VALUES (@TipoItem, @ItemId, @Cantidad, @Minimo)";
+                string query = "INSERT INTO inventario (tipo_item, item_id, cantidad, minimo) VALUES (@TipoItem, @ItemId, @Cantidad, @Minimo)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@TipoItem", inventario.TipoItem);
                 cmd.Parameters.AddWithValue("@ItemId",   inventario.ItemId);
@@ -84,7 +84,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Inventario SET tipo_item=@TipoItem, item_id=@ItemId, cantidad=@Cantidad, minimo=@Minimo WHERE id=@Id";
+                string query = "UPDATE inventario SET tipo_item=@TipoItem, item_id=@ItemId, cantidad=@Cantidad, minimo=@Minimo WHERE id=@Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@TipoItem", inventario.TipoItem);
                 cmd.Parameters.AddWithValue("@ItemId",   inventario.ItemId);
@@ -100,7 +100,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "DELETE FROM Inventario WHERE id = @Id";
+                string query = "DELETE FROM inventario WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;
@@ -128,9 +128,9 @@ namespace InsutriasAP.Services
                         WHEN inv.tipo_item = 'herraje'  THEN h.precio_unitario
                         ELSE 0
                     END AS precio
-                FROM Inventario inv
-                LEFT JOIN Materiales m ON inv.tipo_item = 'material' AND m.id = inv.item_id
-                LEFT JOIN Herrajes   h ON inv.tipo_item = 'herraje'  AND h.id = inv.item_id
+                FROM inventario inv
+                LEFT JOIN materiales m ON inv.tipo_item = 'material' AND m.id = inv.item_id
+                LEFT JOIN herrajes   h ON inv.tipo_item = 'herraje'  AND h.id = inv.item_id
                 WHERE inv.cantidad > 0
                 ORDER BY nombre";
             var cmd = new MySqlCommand(sql, conn);
@@ -155,7 +155,7 @@ namespace InsutriasAP.Services
             using var conn = db.GetConnection();
             conn.Open();
             var cmd = new MySqlCommand(
-                "UPDATE Inventario SET cantidad = cantidad - @Cantidad WHERE id = @Id AND cantidad >= @Cantidad",
+                "UPDATE inventario SET cantidad = cantidad - @Cantidad WHERE id = @Id AND cantidad >= @Cantidad",
                 conn);
             cmd.Parameters.AddWithValue("@Cantidad", cantidad);
             cmd.Parameters.AddWithValue("@Id",       inventarioId);

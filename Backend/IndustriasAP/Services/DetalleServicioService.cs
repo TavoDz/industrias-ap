@@ -21,7 +21,7 @@ namespace InsutriasAP.Services
             {
                 conn.Open();
                 string query = @"SELECT id, cotizacion_id, servicio_id, cantidad, precio, subtotal
-                                 FROM DetalleServicios WHERE cotizacion_id = @CotizacionId";
+                                 FROM detalleservicios WHERE cotizacion_id = @CotizacionId";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CotizacionId", cotizacionId);
                 using var reader = cmd.ExecuteReader();
@@ -36,7 +36,7 @@ namespace InsutriasAP.Services
             {
                 conn.Open();
                 string query = @"SELECT id, cotizacion_id, servicio_id, cantidad, precio, subtotal
-                                 FROM DetalleServicios WHERE id = @Id";
+                                 FROM detalleservicios WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 using var reader = cmd.ExecuteReader();
@@ -54,7 +54,7 @@ namespace InsutriasAP.Services
                 // Obtener costo del servicio si no viene en el request
                 if (detalle.Precio == 0)
                 {
-                    string queryPrecio = "SELECT costo FROM ServiciosExternos WHERE id = @ServicioId";
+                    string queryPrecio = "SELECT costo FROM serviciosexternos WHERE id = @ServicioId";
                     MySqlCommand cmdPrecio = new MySqlCommand(queryPrecio, conn);
                     cmdPrecio.Parameters.AddWithValue("@ServicioId", detalle.ServicioId);
                     var costo = cmdPrecio.ExecuteScalar();
@@ -63,7 +63,7 @@ namespace InsutriasAP.Services
 
                 detalle.Subtotal = detalle.Cantidad * detalle.Precio;
 
-                string query = @"INSERT INTO DetalleServicios (cotizacion_id, servicio_id, cantidad, precio, subtotal)
+                string query = @"INSERT INTO detalleservicios (cotizacion_id, servicio_id, cantidad, precio, subtotal)
                                  VALUES (@CotizacionId, @ServicioId, @Cantidad, @Precio, @Subtotal)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CotizacionId", detalle.CotizacionId);
@@ -82,7 +82,7 @@ namespace InsutriasAP.Services
                 conn.Open();
                 detalle.Subtotal = detalle.Cantidad * detalle.Precio;
 
-                string query = @"UPDATE DetalleServicios SET servicio_id=@ServicioId, cantidad=@Cantidad,
+                string query = @"UPDATE detalleservicios SET servicio_id=@ServicioId, cantidad=@Cantidad,
                                  precio=@Precio, subtotal=@Subtotal WHERE id=@Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@ServicioId", detalle.ServicioId);
@@ -99,7 +99,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "DELETE FROM DetalleServicios WHERE id = @Id";
+                string query = "DELETE FROM detalleservicios WHERE id = @Id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 return cmd.ExecuteNonQuery() > 0;
@@ -111,7 +111,7 @@ namespace InsutriasAP.Services
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                string query = "DELETE FROM DetalleServicios WHERE cotizacion_id = @CotizacionId";
+                string query = "DELETE FROM detalleservicios WHERE cotizacion_id = @CotizacionId";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CotizacionId", cotizacionId);
                 return cmd.ExecuteNonQuery() > 0;
