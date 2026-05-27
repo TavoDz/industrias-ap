@@ -13,6 +13,11 @@ import Usuarios          from './pages/Usuarios/Usuarios'
 import Inventario from './pages/Inventario/Inventario'
 import CotizacionPDF from './pages/Cotizaciones/CotizacionPDF'
 import Optimizador from './pages/Optimizador/Optimizador'
+import Optimizaciones from './pages/Optimizaciones/Optimizaciones'
+import OptimizadorAvanzado from './pages/OptimizadorAvanzado/OptimizadorAvanzado'
+import Proyectos from './pages/Proyectos/Proyectos'
+import Ventas    from './pages/Ventas/Ventas'
+import Caja      from './pages/Caja/Caja'
 
 const Placeholder = ({ titulo }) => (
   <div>
@@ -39,6 +44,11 @@ export default function App() {
           <Route path="/cotizaciones/:id" element={<PrivateRoute><DetalleCotizacion /></PrivateRoute>} />
          <Route path="/usuarios"      element={<PrivateRoute rol="admin"><Usuarios/></PrivateRoute>}/>
          <Route path="/optimizador" element={<PrivateRoute><Optimizador /></PrivateRoute>} />
+         <Route path="/optimizaciones" element={<PrivateRoute><Optimizaciones /></PrivateRoute>} />
+         <Route path="/optimizador-avanzado" element={<PrivateRoute><OptimizadorAvanzado /></PrivateRoute>} />
+         <Route path="/proyectos" element={<PrivateRoute roles={['admin','produccion']}><Proyectos /></PrivateRoute>} />
+         <Route path="/ventas"   element={<PrivateRoute><Ventas /></PrivateRoute>} />
+         <Route path="/caja"     element={<PrivateRoute><Caja /></PrivateRoute>} />
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>

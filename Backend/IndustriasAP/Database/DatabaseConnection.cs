@@ -1,16 +1,20 @@
-﻿using MySql.Data.MySqlClient;
-
+using MySql.Data.MySqlClient;
 
 namespace InsutriasAP.Database
 {
     public class DatabaseConnection
     {
-        private string connectionString =   
-        "server=localhost;port=3307;database=sistema_carpinteria;user=root;password=;";
+        private readonly string _connectionString;
+
+        public DatabaseConnection(IConfiguration config)
+        {
+            _connectionString = config.GetConnectionString("DefaultConnection")
+                ?? throw new InvalidOperationException("Connection string 'DefaultConnection' no encontrada en appsettings.json");
+        }
 
         public MySqlConnection GetConnection()
         {
-            return new MySqlConnection(connectionString);
+            return new MySqlConnection(_connectionString);
         }
     }
 }

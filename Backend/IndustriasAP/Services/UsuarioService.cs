@@ -1,4 +1,4 @@
-using InsutriasAP.Database;
+﻿using InsutriasAP.Database;
 using InsutriasAP.Models;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
@@ -8,7 +8,12 @@ namespace InsutriasAP.Services
 {
     public class UsuarioService
     {
-        DatabaseConnection db = new DatabaseConnection();
+        private readonly DatabaseConnection db;
+
+        public UsuarioService(DatabaseConnection db)
+        {
+            this.db = db;
+        }
 
         // ─── Helpers ──────────────────────────────────────────────
 

@@ -22,6 +22,10 @@ namespace InsutriasAP.Controllers
             return Ok(items);
         }
 
+        [HttpGet("disponible")]
+        public IActionResult ObtenerDisponible()
+            => Ok(_inventarioService.ObtenerDisponible());
+
         [HttpGet("{id}")]
         public IActionResult ObtenerPorId(int id)
         {

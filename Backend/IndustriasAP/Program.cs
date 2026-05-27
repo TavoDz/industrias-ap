@@ -11,10 +11,33 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins(
+                "http://localhost:5173",
+                "http://localhost:4173",
+                builder.Configuration["Cors:AllowedOrigin"] ?? "http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 // ─── EF Core (MySQL vía Pomelo) ───────────────────────────────────
 var connStr = builder.Configuration.GetConnectionString("DefaultConnection")!;
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connStr, new MySqlServerVersion(new Version(8, 0, 21))));
+
+// ─── Base de datos ────────────────────────────────────────
+builder.Services.AddScoped<DatabaseConnection>();
+
+// ─── HTTP client para el optimizador Python ──────────────
+builder.Services.AddHttpClient("optimizer", c =>
+{
+    c.BaseAddress = new Uri("http://localhost:8001/");
+    c.Timeout = TimeSpan.FromSeconds(60);
+});
 
 // ─── Servicios ────────────────────────────────────────────
 builder.Services.AddScoped<ClienteService>();
@@ -31,6 +54,14 @@ builder.Services.AddScoped<CotizacionCompletaService>();
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<OptimizerService>();
+builder.Services.AddScoped<AdvancedOptimizerService>();
+builder.Services.AddScoped<ProyectoService>();
+builder.Services.AddScoped<ComentarioService>();
+builder.Services.AddScoped<VentaService>();
+builder.Services.AddScoped<CajaService>();
+builder.Services.AddScoped<CotizacionMaterialService>();
+builder.Services.AddScoped<CotizacionManoObraService>();
+builder.Services.AddScoped<ParametrosService>();
 
 // ─── JWT ──────────────────────────────────────────────────
 var jwtKey = builder.Configuration["Jwt:Key"]!;
@@ -90,6 +121,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 

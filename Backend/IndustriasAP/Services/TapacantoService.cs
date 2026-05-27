@@ -1,4 +1,4 @@
-using InsutriasAP.Database;
+﻿using InsutriasAP.Database;
 using InsutriasAP.Models;
 using MySql.Data.MySqlClient;
 
@@ -6,7 +6,12 @@ namespace InsutriasAP.Services
 {
     public class TapacantoService
     {
-        DatabaseConnection db = new DatabaseConnection();
+        private readonly DatabaseConnection db;
+
+        public TapacantoService(DatabaseConnection db)
+        {
+            this.db = db;
+        }
 
         public List<Tapacanto> ObtenerTodos()
         {

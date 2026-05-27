@@ -11,13 +11,31 @@ namespace InsutriasAP.Models
         public string UsuarioNombre { get; set; } = string.Empty;
         public DateTime Fecha { get; set; }
         public string Estado { get; set; } = string.Empty;
-        public List<PiezaCorteDetallada> Piezas { get; set; } = new();
-        public List<DetalleHerrajeDetallado> Herrajes { get; set; } = new();
-        public List<DetalleServicioDetallado> Servicios { get; set; } = new();
+
+        // Campos descriptivos
+        public string? DescripcionGeneral { get; set; }
+        public string TipoAcabado { get; set; } = "normal";
+        public int? TiempoEstimadoDias { get; set; }
+        public string? Observaciones { get; set; }
+        public string? Terminos { get; set; }
+
+        // Costos y ganancia
+        public decimal PorcentajeGanancia { get; set; } = 35;
         public decimal TotalMateriales { get; set; }
         public decimal TotalHerrajes { get; set; }
         public decimal TotalServicios { get; set; }
+        public decimal TotalManoObra { get; set; }
+        public decimal SubtotalCostos { get; set; }
+        public decimal MontoGanancia { get; set; }
+        public decimal Descuento { get; set; }
         public decimal Total { get; set; }
+
+        // Listas
+        public List<CotizacionMaterialDetallado> Materiales { get; set; } = new();
+        public List<PiezaCorteDetallada> Piezas { get; set; } = new();
+        public List<DetalleHerrajeDetallado> Herrajes { get; set; } = new();
+        public List<DetalleServicioDetallado> Servicios { get; set; } = new();
+        public List<CotizacionManoObra> ManoObra { get; set; } = new();
     }
 
     public class PiezaCorteDetallada

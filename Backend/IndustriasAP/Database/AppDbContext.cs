@@ -19,25 +19,17 @@ namespace InsutriasAP.Database
             modelBuilder.Entity<Optimizacion>(entity =>
             {
                 entity.HasKey(e => e.Id);
-
-                entity.Property(e => e.Nombre)
-                      .HasMaxLength(200)
-                      .IsRequired(false);
-
-                entity.Property(e => e.MaterialNombre)
-                      .HasMaxLength(200)
-                      .IsRequired();
-
-                entity.Property(e => e.Fecha)
-                      .IsRequired();
-
-                entity.Property(e => e.JsonResultado)
-                      .HasColumnType("longtext")
-                      .IsRequired();
-
-                entity.Property(e => e.JsonRequest)
-                      .HasColumnType("longtext")
-                      .IsRequired(false);
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Nombre).HasColumnName("nombre").HasMaxLength(200).IsRequired(false);
+                entity.Property(e => e.Descripcion).HasColumnName("descripcion").HasColumnType("text").IsRequired(false);
+                entity.Property(e => e.MaterialId).HasColumnName("material_id").IsRequired(false);
+                entity.Property(e => e.MaterialNombre).HasColumnName("material_nombre").HasMaxLength(200).IsRequired(false);
+                entity.Property(e => e.Fecha).HasColumnName("fecha").IsRequired();
+                entity.Property(e => e.UltimaEjecucion).HasColumnName("ultima_ejecucion").IsRequired(false);
+                entity.Property(e => e.CotizacionId).HasColumnName("cotizacion_id").IsRequired(false);
+                entity.Property(e => e.TotalEjecuciones).HasColumnName("total_ejecuciones").HasDefaultValue(0);
+                entity.Property(e => e.JsonResultado).HasColumnName("json_resultado").HasColumnType("longtext").IsRequired(false);
+                entity.Property(e => e.JsonRequest).HasColumnName("json_request").HasColumnType("longtext").IsRequired(false);
             });
         }
     }

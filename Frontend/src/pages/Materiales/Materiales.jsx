@@ -4,12 +4,13 @@ import { materialesService } from '../../services'
 const formInicial = { nombre: '', tipo: '', grosor: '', largo: '', ancho: '', precioTablero: '' }
 
 export default function Materiales() {
-  const [materiales, setMateriales] = useState([])
-  const [loading, setLoading]       = useState(true)
-  const [error, setError]           = useState('')
+  const [materiales,  setMateriales]  = useState([])
+  const [loading,     setLoading]     = useState(true)
+  const [error,       setError]       = useState('')
   const [mostrarForm, setMostrarForm] = useState(false)
-  const [editando, setEditando]       = useState(null)
-  const [form, setForm]               = useState(formInicial)
+  const [editando,    setEditando]    = useState(null)
+  const [form,        setForm]        = useState(formInicial)
+  const [buscar,      setBuscar]      = useState('')
 
   const cargar = async () => {
     try {
@@ -63,30 +64,38 @@ export default function Materiales() {
     }
   }
 
-  const eliminar = async (id) => {
-    if (!confirm('Eliminar este material?')) return
+  const eliminar = async (id, nombre) => {
+    if (!confirm(`¿Eliminar "${nombre}"?`)) return
     try {
       await materialesService.eliminar(id)
       cargar()
-    } catch {
-      setError('Error al eliminar')
+    } catch (e) {
+      setError('Error al eliminar: ' + (e.response?.data || e.message))
     }
   }
+
+  const filtrados = materiales.filter(m =>
+    m.nombre.toLowerCase().includes(buscar.toLowerCase()) ||
+    (m.tipo || '').toLowerCase().includes(buscar.toLowerCase())
+  )
 
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-semibold text-gray-800">Materiales</h2>
+        <div>
+          <h2 className="text-xl font-semibold text-gray-800">Materiales</h2>
+          <p className="text-sm text-gray-500 mt-0.5">{materiales.length} registrados</p>
+        </div>
         <button
           onClick={abrirNuevo}
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 transition"
+          className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition"
         >
           + Nuevo material
         </button>
       </div>
 
       {error && (
-        <div className="bg-red-50 text-red-600 text-sm px-3 py-2 rounded mb-4">{error}</div>
+        <div className="bg-red-50 border border-red-200 text-red-600 text-sm px-3 py-2 rounded-lg mb-4">{error}</div>
       )}
 
       {mostrarForm && (
@@ -169,36 +178,63 @@ export default function Materiales() {
         </div>
       )}
 
+      {/* Buscador */}
+      <div className="mb-4 flex items-center gap-3">
+        <input
+          value={buscar}
+          onChange={e => setBuscar(e.target.value)}
+          placeholder="Buscar por nombre o tipo..."
+          className="border border-gray-300 rounded-lg px-3 py-2 text-sm w-72 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        {buscar && (
+          <span className="text-xs text-gray-400">
+            {filtrados.length} de {materiales.length} materiales
+          </span>
+        )}
+      </div>
+
       {loading ? (
-        <p className="text-sm text-gray-500">Cargando...</p>
+        <div className="flex items-center justify-center py-16 text-gray-400 text-sm">
+          Cargando...
+        </div>
       ) : (
-        <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
           <table className="w-full text-sm">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 {['Nombre', 'Tipo', 'Grosor', 'Largo', 'Ancho', 'Precio tablero', ''].map(h => (
-                  <th key={h} className="text-left px-4 py-3 text-gray-600 font-medium">{h}</th>
+                  <th key={h} className="text-left px-4 py-3 text-xs font-semibold text-gray-500">{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              {materiales.length === 0 ? (
+              {filtrados.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="text-center py-8 text-gray-400">
-                    Sin materiales registrados
+                  <td colSpan={7} className="text-center py-12">
+                    {buscar ? (
+                      <p className="text-gray-400 text-sm">Sin resultados para "{buscar}"</p>
+                    ) : (
+                      <div>
+                        <p className="text-gray-400 text-sm mb-2">No hay materiales registrados</p>
+                        <button onClick={abrirNuevo}
+                          className="text-sm text-blue-600 hover:underline font-medium">
+                          Agregar primer material →
+                        </button>
+                      </div>
+                    )}
                   </td>
                 </tr>
-              ) : materiales.map(m => (
-                <tr key={m.id} className="hover:bg-gray-50">
+              ) : filtrados.map(m => (
+                <tr key={m.id} className="hover:bg-gray-50 transition">
                   <td className="px-4 py-3 font-medium text-gray-800">{m.nombre}</td>
                   <td className="px-4 py-3 text-gray-600">{m.tipo || '—'}</td>
                   <td className="px-4 py-3 text-gray-600">{m.grosor} mm</td>
                   <td className="px-4 py-3 text-gray-600">{m.largo} mm</td>
                   <td className="px-4 py-3 text-gray-600">{m.ancho} mm</td>
-                  <td className="px-4 py-3 text-gray-600">Q{Number(m.precioTablero).toFixed(2)}</td>
-                  <td className="px-4 py-3 flex gap-2 justify-end">
+                  <td className="px-4 py-3 font-medium text-gray-700">Q{Number(m.precioTablero).toFixed(2)}</td>
+                  <td className="px-4 py-3 flex gap-3 justify-end">
                     <button onClick={() => abrirEditar(m)} className="text-xs text-blue-600 hover:underline">Editar</button>
-                    <button onClick={() => eliminar(m.id)} className="text-xs text-red-500 hover:underline">Eliminar</button>
+                    <button onClick={() => eliminar(m.id, m.nombre)} className="text-xs text-red-500 hover:underline">Eliminar</button>
                   </td>
                 </tr>
               ))}
