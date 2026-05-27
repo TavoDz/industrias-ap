@@ -250,7 +250,10 @@ export default function Materiales() {
                 <tr key={m.id} className="hover:bg-gray-50 transition">
                   <td className="px-4 py-3 font-medium text-gray-800">{m.nombre}</td>
                   <td className="px-4 py-3 text-gray-600">{m.tipo || '—'}</td>
-                  <td className="px-4 py-3 text-gray-600">{m.grosor} mm</td>
+                  <td className="px-4 py-3 text-gray-600">
+                    {m.grosor} mm
+                    <span className="text-gray-400 text-xs ml-1">({(m.grosor / 25.4).toFixed(3)}")</span>
+                  </td>
                   <td className="px-4 py-3 text-gray-600">{m.largo} mm</td>
                   <td className="px-4 py-3 text-gray-600">{m.ancho} mm</td>
                   <td className="px-4 py-3 font-medium text-gray-700">Q{Number(m.precioTablero).toFixed(2)}</td>
