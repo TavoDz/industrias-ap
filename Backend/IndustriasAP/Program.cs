@@ -33,9 +33,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<DatabaseConnection>();
 
 // ─── HTTP client para el optimizador Python ──────────────
+var optimizerUrl = builder.Configuration["Optimizer:BaseUrl"] ?? "http://localhost:8001/";
 builder.Services.AddHttpClient("optimizer", c =>
 {
-    c.BaseAddress = new Uri("http://localhost:8001/");
+    c.BaseAddress = new Uri(optimizerUrl);
     c.Timeout = TimeSpan.FromSeconds(60);
 });
 
@@ -120,7 +121,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
