@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { serviciosService } from '../../services'
 
 const formInicial = { nombre: '', proveedor: '', costo: '' }
@@ -73,7 +73,7 @@ export default function Servicios() {
           <p className="text-sm text-gray-500 mt-0.5">{data.length} registrados</p>
         </div>
         <button onClick={abrirNuevo}
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+          className="bg-emerald-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
           + Nuevo servicio
         </button>
       </div>
@@ -100,7 +100,7 @@ export default function Servicios() {
                   onChange={e => setForm({ ...form, [key]: e.target.value })}
                   type={key === 'costo' ? 'number' : 'text'}
                   step={key === 'costo' ? '0.01' : undefined}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   required={req}
                 />
               </div>
@@ -111,7 +111,7 @@ export default function Servicios() {
                 Cancelar
               </button>
               <button type="submit"
-                className="text-sm px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                className="text-sm px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">
                 {editId ? 'Actualizar' : 'Guardar'}
               </button>
             </div>
@@ -124,7 +124,7 @@ export default function Servicios() {
           value={buscar}
           onChange={e => setBuscar(e.target.value)}
           placeholder="Buscar por nombre o proveedor..."
-          className="border border-gray-300 rounded-lg px-3 py-2 text-sm w-72 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-300 rounded-lg px-3 py-2 text-sm w-72 focus:outline-none focus:ring-2 focus:ring-emerald-500"
         />
       </div>
 
@@ -154,7 +154,7 @@ export default function Servicios() {
                   <td className="px-4 py-3 text-gray-700 font-medium">Q{Number(s.costo).toFixed(2)}</td>
                   <td className="px-4 py-3 flex gap-3 justify-end">
                     <button onClick={() => abrirEditar(s)}
-                      className="text-xs text-blue-600 hover:underline">Editar</button>
+                      className="text-xs text-emerald-600 hover:underline">Editar</button>
                     <button onClick={() => eliminar(s.id)}
                       className="text-xs text-red-500 hover:underline">Eliminar</button>
                   </td>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { cotizacionesService, clientesService } from '../../services'
 
@@ -102,7 +102,7 @@ export default function Cotizaciones() {
           <p className="text-sm text-gray-500 mt-0.5">{data.length} en total</p>
         </div>
         <button onClick={() => setShow(true)}
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+          className="bg-emerald-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
           + Nueva
         </button>
       </div>
@@ -112,7 +112,7 @@ export default function Cotizaciones() {
         {[
           { label: 'Pendientes',          value: totales.pendiente, color: 'text-amber-600' },
           { label: 'Aprobadas',           value: totales.aprobada,  color: 'text-green-600' },
-          { label: 'Monto aprobado',      value: `Q${totales.monto.toFixed(2)}`, color: 'text-blue-600' },
+          { label: 'Monto aprobado',      value: `Q${totales.monto.toFixed(2)}`, color: 'text-emerald-600' },
         ].map(({ label, value, color }) => (
           <div key={label} className="bg-white border border-gray-200 rounded-xl p-4">
             <p className="text-xs text-gray-400 mb-1">{label}</p>
@@ -134,7 +134,7 @@ export default function Cotizaciones() {
               <label className="block text-xs text-gray-500 mb-1">Cliente *</label>
               <select value={form.clienteId}
                 onChange={e => setForm({ ...form, clienteId: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required>
                 <option value="">Seleccionar cliente...</option>
                 {clientes.map(c => (
@@ -143,7 +143,7 @@ export default function Cotizaciones() {
               </select>
             </div>
             <button type="submit"
-              className="text-sm px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+              className="text-sm px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700">
               Crear
             </button>
             <button type="button" onClick={() => setShow(false)}
@@ -158,7 +158,7 @@ export default function Cotizaciones() {
       <div className="bg-white border border-gray-200 rounded-xl p-4 mb-4">
         <div className="flex items-center gap-3 flex-wrap">
           <select value={filtroEstado} onChange={e => setFiltroEstado(e.target.value)}
-            className="border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            className="border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
             <option value="">Todos los estados</option>
             <option value="pendiente">Pendiente</option>
             <option value="aprobada">Aprobada</option>
@@ -168,19 +168,19 @@ export default function Cotizaciones() {
 
           <input value={filtroCliente} onChange={e => setFiltroCliente(e.target.value)}
             placeholder="Buscar cliente..."
-            className="border border-gray-300 rounded-lg px-3 py-1.5 text-sm w-44 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 rounded-lg px-3 py-1.5 text-sm w-44 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
 
           <div className="flex items-center gap-1.5 text-sm text-gray-500">
             <span>Desde</span>
             <input type="date" value={filtroDesde} onChange={e => setFiltroDesde(e.target.value)}
-              className="border border-gray-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
           <div className="flex items-center gap-1.5 text-sm text-gray-500">
             <span>Hasta</span>
             <input type="date" value={filtroHasta} onChange={e => setFiltroHasta(e.target.value)}
-              className="border border-gray-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-300 rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -239,7 +239,7 @@ export default function Cotizaciones() {
                   </td>
                   <td className="px-4 py-3 text-right">
                     <button onClick={() => navigate('/cotizaciones/' + c.id)}
-                      className="text-xs text-blue-600 hover:underline">
+                      className="text-xs text-emerald-600 hover:underline">
                       Ver/Editar →
                     </button>
                   </td>

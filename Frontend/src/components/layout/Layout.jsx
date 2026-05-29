@@ -57,8 +57,8 @@ function NavItem({ item, active }) {
       to={item.path}
       className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all ${
         active
-          ? 'bg-blue-600 text-white shadow-sm'
-          : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100'
+          ? 'bg-emerald-500/15 text-emerald-400'
+          : 'text-white/50 hover:bg-white/[0.06] hover:text-white'
       }`}>
       <span className="shrink-0 opacity-80">
         <Icon d={icons[item.icon]} />
@@ -86,15 +86,15 @@ export default function Layout({ children }) {
   const menuProdFiltrado  = menuProduccion.filter(puedeVer)
 
   return (
-    <div className="flex h-screen bg-slate-50 overflow-hidden">
+    <div className="flex h-screen bg-[#f5f5f5] overflow-hidden">
 
       {/* Sidebar */}
-      <aside className="w-60 bg-slate-900 flex flex-col shrink-0">
+      <aside className="w-60 bg-[#0e0e0e] flex flex-col shrink-0">
 
         {/* Logo */}
-        <div className="px-5 py-5 border-b border-slate-800">
+        <div className="px-5 py-5 border-b border-white/[0.06]">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center shrink-0">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                 <polyline points="9 22 9 12 15 12 15 22" fill="none" stroke="white" strokeWidth="2"/>
@@ -102,20 +102,20 @@ export default function Layout({ children }) {
             </div>
             <div>
               <h1 className="font-bold text-white text-sm leading-none">Industrias AP</h1>
-              <p className="text-xs text-slate-500 mt-0.5">Sistema de Carpintería</p>
+              <p className="text-xs text-white/30 mt-0.5">Sistema de Carpintería</p>
             </div>
           </div>
         </div>
 
         {/* User */}
-        <div className="px-4 py-3 border-b border-slate-800">
+        <div className="px-4 py-3 border-b border-white/[0.06]">
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 bg-slate-700 rounded-full flex items-center justify-center text-xs font-semibold text-slate-300 shrink-0">
+            <div className="w-7 h-7 bg-emerald-500/20 rounded-full flex items-center justify-center text-xs font-semibold text-emerald-400 shrink-0">
               {usuario?.nombre?.[0]?.toUpperCase() || '?'}
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-medium text-slate-200 truncate">{usuario?.nombre}</p>
-              <span className="text-[10px] text-slate-500 capitalize">{usuario?.rol}</span>
+              <p className="text-xs font-medium text-white truncate">{usuario?.nombre}</p>
+              <span className="text-[10px] text-white/40 capitalize">{usuario?.rol}</span>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function Layout({ children }) {
 
           {/* Separador optimizador */}
           <div className="pt-3 pb-1 px-3">
-            <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest">
+            <p className="text-[10px] font-semibold text-white/25 uppercase tracking-widest">
               Optimizador
             </p>
           </div>
@@ -138,7 +138,7 @@ export default function Layout({ children }) {
 
           {/* Separador ventas */}
           <div className="pt-3 pb-1 px-3">
-            <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest">
+            <p className="text-[10px] font-semibold text-white/25 uppercase tracking-widest">
               Ventas
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function Layout({ children }) {
           {menuProdFiltrado.length > 0 && (
             <>
               <div className="pt-3 pb-1 px-3">
-                <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest">
+                <p className="text-[10px] font-semibold text-white/25 uppercase tracking-widest">
                   Producción
                 </p>
               </div>
@@ -162,10 +162,10 @@ export default function Layout({ children }) {
         </nav>
 
         {/* Logout */}
-        <div className="px-3 pb-4 border-t border-slate-800 pt-3">
+        <div className="px-3 pb-4 border-t border-white/[0.06] pt-3">
           <button
             onClick={handleLogout}
-            className="flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm text-slate-400 hover:bg-slate-800 hover:text-slate-100 transition">
+            className="flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm text-white/40 hover:bg-white/[0.06] hover:text-white transition">
             <span className="shrink-0"><Icon d={icons.logout} /></span>
             <span>Cerrar sesión</span>
           </button>

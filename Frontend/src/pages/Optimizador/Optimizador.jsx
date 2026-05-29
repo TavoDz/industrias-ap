@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react'
+﻿import { useEffect, useRef, useState, useCallback } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import {
   materialesService, optimizacionesService,
@@ -80,23 +80,23 @@ function TapacantoEditor({ pieza, onChange }) {
     <div className="inline-grid gap-0.5" style={{ gridTemplateColumns: '14px 28px 14px', gridTemplateRows: '14px 28px 14px', width: 56, height: 56 }}>
       <div />
       <button onClick={() => toggle('top')} title="Canto Superior"
-        className={`rounded-sm transition-colors cursor-pointer ${t.top ? 'bg-blue-500' : 'bg-gray-200 hover:bg-blue-200'}`} />
+        className={`rounded-sm transition-colors cursor-pointer ${t.top ? 'bg-emerald-500' : 'bg-gray-200 hover:bg-emerald-200'}`} />
       <div />
       <button onClick={() => toggle('left')} title="Canto Izquierdo"
-        className={`rounded-sm transition-colors cursor-pointer ${t.left ? 'bg-blue-500' : 'bg-gray-200 hover:bg-blue-200'}`} />
+        className={`rounded-sm transition-colors cursor-pointer ${t.left ? 'bg-emerald-500' : 'bg-gray-200 hover:bg-emerald-200'}`} />
       <button onClick={toggleAll} title="Todos los cantos"
         className={`rounded-sm transition-colors cursor-pointer border flex items-center justify-center ${
           t.top && t.bottom && t.left && t.right
-            ? 'bg-blue-100 border-blue-400 hover:bg-red-100'
-            : 'bg-gray-100 border-gray-300 hover:bg-blue-100'
+            ? 'bg-emerald-100 border-emerald-400 hover:bg-red-100'
+            : 'bg-gray-100 border-gray-300 hover:bg-emerald-100'
         }`}>
         <span style={{ fontSize: 8, lineHeight: 1, color: '#64748b', userSelect: 'none' }}>✦</span>
       </button>
       <button onClick={() => toggle('right')} title="Canto Derecho"
-        className={`rounded-sm transition-colors cursor-pointer ${t.right ? 'bg-blue-500' : 'bg-gray-200 hover:bg-blue-200'}`} />
+        className={`rounded-sm transition-colors cursor-pointer ${t.right ? 'bg-emerald-500' : 'bg-gray-200 hover:bg-emerald-200'}`} />
       <div />
       <button onClick={() => toggle('bottom')} title="Canto Inferior"
-        className={`rounded-sm transition-colors cursor-pointer ${t.bottom ? 'bg-blue-500' : 'bg-gray-200 hover:bg-blue-200'}`} />
+        className={`rounded-sm transition-colors cursor-pointer ${t.bottom ? 'bg-emerald-500' : 'bg-gray-200 hover:bg-emerald-200'}`} />
       <div />
     </div>
   )
@@ -638,7 +638,7 @@ export default function Optimizador() {
 
       // Tapacanto (líneas azules gruesas)
       const tw = Math.max(2.5, Math.min(4.5, Math.min(w, h) / 20))
-      ctx.strokeStyle = '#2563eb'; ctx.lineWidth = tw
+      ctx.strokeStyle = '#059669'; ctx.lineWidth = tw
       if (pieza.tapacantoL1) { ctx.beginPath(); ctx.moveTo(x, y);     ctx.lineTo(x + w, y);     ctx.stroke() }
       if (pieza.tapacantoL2) { ctx.beginPath(); ctx.moveTo(x, y + h); ctx.lineTo(x + w, y + h); ctx.stroke() }
       if (pieza.tapacantoA1) { ctx.beginPath(); ctx.moveTo(x, y);     ctx.lineTo(x, y + h);     ctx.stroke() }
@@ -1201,8 +1201,8 @@ export default function Optimizador() {
             <button onClick={optimizar} disabled={loading}
               className={`text-xs px-5 py-1.5 rounded-lg transition font-semibold shadow-sm ${
                 loading
-                  ? 'bg-blue-400 text-white cursor-wait'
-                  : 'bg-blue-600 text-white hover:bg-blue-700 active:scale-95'
+                  ? 'bg-emerald-400 text-white cursor-wait'
+                  : 'bg-emerald-600 text-white hover:bg-emerald-700 active:scale-95'
               }`}>
               {loading ? (
                 <span className="flex items-center gap-1.5">
@@ -1235,18 +1235,18 @@ export default function Optimizador() {
                 <label className="block text-xs text-gray-500 mb-1">Nombre</label>
                 <input type="text" value={saveNombre} onChange={e => setSaveNombre(e.target.value)}
                   placeholder="Ej: Closet habitación principal"
-                  className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                  className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
               </div>
               <div>
                 <label className="block text-xs text-gray-500 mb-1">Descripción (opcional)</label>
                 <input type="text" value={saveDesc} onChange={e => setSaveDesc(e.target.value)}
                   placeholder="Notas adicionales..."
-                  className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                  className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
               </div>
             </div>
             <div className="flex gap-2 mt-3">
               <button onClick={handleGuardar} disabled={saving}
-                className="text-xs bg-blue-600 text-white px-4 py-1.5 rounded-lg hover:bg-blue-700 disabled:opacity-50 transition font-medium">
+                className="text-xs bg-emerald-600 text-white px-4 py-1.5 rounded-lg hover:bg-emerald-700 disabled:opacity-50 transition font-medium">
                 {saving ? 'Guardando...' : savedId ? 'Actualizar' : 'Guardar'}
               </button>
               {savedId && (
@@ -1269,7 +1269,7 @@ export default function Optimizador() {
             <div className="flex items-center justify-between mb-3">
               <p className="text-xs font-semibold text-gray-700">Optimizaciones guardadas</p>
               <button onClick={() => navigate('/optimizaciones')}
-                className="text-xs text-blue-600 hover:underline">Ver todas →</button>
+                className="text-xs text-emerald-600 hover:underline">Ver todas →</button>
             </div>
             {loadingLista ? (
               <p className="text-xs text-gray-400 text-center py-4">Cargando...</p>
@@ -1279,7 +1279,7 @@ export default function Optimizador() {
               <div className="space-y-2">
                 {listaGuardadas.map(opt => (
                   <div key={opt.id}
-                    className="flex items-center justify-between bg-white border border-gray-200 rounded-lg px-3 py-2 hover:border-blue-300 transition">
+                    className="flex items-center justify-between bg-white border border-gray-200 rounded-lg px-3 py-2 hover:border-emerald-300 transition">
                     <div className="min-w-0 flex-1">
                       <p className="text-xs font-medium text-gray-800 truncate">{opt.nombre || 'Sin nombre'}</p>
                       <p className="text-xs text-gray-400 truncate">
@@ -1288,7 +1288,7 @@ export default function Optimizador() {
                       </p>
                     </div>
                     <button onClick={() => cargarOptimizacion(opt.id)}
-                      className="text-xs bg-blue-600 text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition ml-3 shrink-0">
+                      className="text-xs bg-emerald-600 text-white px-3 py-1 rounded-lg hover:bg-emerald-700 transition ml-3 shrink-0">
                       Cargar
                     </button>
                   </div>
@@ -1314,7 +1314,7 @@ export default function Optimizador() {
             <div className="space-y-3">
               {PLANTILLAS.map(plantilla => (
                 <button key={plantilla.nombre} onClick={() => aplicarPlantilla(plantilla)}
-                  className="w-full text-left border border-gray-200 rounded-xl px-4 py-3 hover:border-blue-400 hover:bg-blue-50 transition">
+                  className="w-full text-left border border-gray-200 rounded-xl px-4 py-3 hover:border-emerald-400 hover:bg-emerald-50 transition">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm font-semibold text-gray-800">{plantilla.nombre}</p>
@@ -1500,7 +1500,7 @@ export default function Optimizador() {
         <div className="bg-white border border-gray-200 rounded-lg px-4 py-3 flex items-center gap-6">
           <label className="text-xs font-medium text-gray-600 whitespace-nowrap">Material</label>
           <select value={materialId} onChange={e => setMaterialId(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-64">
+            className="border border-gray-300 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 min-w-64">
             <option value="">Seleccionar material...</option>
             {materiales.map(m => (
               <option key={m.id} value={m.id}>{m.nombre} ({m.largo}×{m.ancho} mm)</option>
@@ -1511,7 +1511,7 @@ export default function Optimizador() {
 
           <label className="text-xs font-medium text-gray-600 whitespace-nowrap">Espesor tapacanto</label>
           <select value={tapaEspesor} onChange={e => setTapaEspesor(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            className="border border-gray-300 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
             <option value="0.4">0.4 mm</option>
             <option value="1">1 mm</option>
             <option value="2">2 mm</option>
@@ -1519,7 +1519,7 @@ export default function Optimizador() {
           </select>
 
           <div className="ml-auto flex items-center gap-5 text-xs text-gray-400">
-            <span className="flex items-center gap-1.5"><span className="inline-block w-6 h-0.5 bg-blue-500"></span> Tapacanto</span>
+            <span className="flex items-center gap-1.5"><span className="inline-block w-6 h-0.5 bg-emerald-500"></span> Tapacanto</span>
             <span className="flex items-center gap-1.5"><span className="inline-block w-4 h-2 bg-red-200 border border-red-300 rounded-sm"></span> Kerf (3mm)</span>
             <span>↺ = rotada</span>
           </div>
@@ -1537,7 +1537,7 @@ export default function Optimizador() {
                 <th className="text-left px-2 py-2 text-xs font-medium text-gray-500">Descripción</th>
                 <th className="text-center px-2 py-2 text-xs font-medium text-gray-500 w-16">
                   <button onClick={toggleGirarTodo} title="Activar/desactivar girar en todas"
-                    className="hover:text-blue-600 transition">Girar ↺</button>
+                    className="hover:text-emerald-600 transition">Girar ↺</button>
                 </th>
                 <th className="text-center px-2 py-2 text-xs font-medium text-gray-500 w-20">Tapacanto</th>
                 <th className="w-8"></th>
@@ -1550,27 +1550,27 @@ export default function Optimizador() {
                   <td className="px-2 py-1.5">
                     <input type="number" min="1" value={p.cantidad}
                       onChange={e => set(i, 'cantidad', e.target.value)}
-                      className="w-full border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-blue-400" />
+                      className="w-full border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-emerald-400" />
                   </td>
                   <td className="px-2 py-1.5">
                     <input type="number" value={p.largo} placeholder="0"
                       onChange={e => set(i, 'largo', e.target.value)}
-                      className="w-full border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-blue-400" />
+                      className="w-full border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-emerald-400" />
                   </td>
                   <td className="px-2 py-1.5">
                     <input type="number" value={p.ancho} placeholder="0"
                       onChange={e => set(i, 'ancho', e.target.value)}
-                      className="w-full border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-blue-400" />
+                      className="w-full border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-emerald-400" />
                   </td>
                   <td className="px-2 py-1.5">
                     <input type="text" value={p.nombre} placeholder="Ej: frente de cajón"
                       onChange={e => set(i, 'nombre', e.target.value)}
-                      className="w-full border border-gray-200 rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-400" />
+                      className="w-full border border-gray-200 rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-400" />
                   </td>
                   <td className="px-2 py-1.5 text-center">
                     <input type="checkbox" checked={p.girar}
                       onChange={e => set(i, 'girar', e.target.checked)}
-                      className="w-4 h-4 rounded accent-blue-600 cursor-pointer" />
+                      className="w-4 h-4 rounded accent-emerald-600 cursor-pointer" />
                   </td>
                   <td className="px-2 py-1.5 flex justify-center">
                     <TapacantoEditor pieza={p} onChange={(campo, val) => set(i, campo, val)} />
@@ -1587,7 +1587,7 @@ export default function Optimizador() {
           </table>
           <div className="px-4 py-2 border-t border-gray-100 bg-gray-50 flex items-center justify-between">
             <button onClick={() => setPiezas([...piezas, piezaVacia()])}
-              className="text-xs text-blue-600 hover:underline font-medium">+ Agregar fila</button>
+              className="text-xs text-emerald-600 hover:underline font-medium">+ Agregar fila</button>
             <span className="text-xs text-gray-400">
               {piezas.filter(p => p.nombre).length} pieza(s) — Kerf 3mm incluido · ✦ centro = todos los cantos
             </span>
@@ -1609,7 +1609,7 @@ export default function Optimizador() {
               const pctColor  = pct >= 80 ? 'text-green-700' : pct >= 60 ? 'text-yellow-600' : 'text-orange-600'
 
               const stats = [
-                { l: 'Tableros',     v: resultado.totalPlanchas + ' ud.',  cls: 'text-blue-700',    bg: 'bg-blue-50'   },
+                { l: 'Tableros',     v: resultado.totalPlanchas + ' ud.',  cls: 'text-emerald-700',    bg: 'bg-emerald-50'   },
                 { l: 'Aprovecha.',   v: resultado.porcentajeUso + '%',     cls: pctColor,            bg: 'bg-green-50'  },
                 { l: 'Desperdicio',  v: resultado.porcentajeDesperdicio + '%', cls: 'text-orange-600', bg: 'bg-orange-50' },
                 { l: 'Cortes tot.', v: totalCortes + ' cortes',            cls: 'text-red-600',     bg: 'bg-red-50'    },
@@ -1656,7 +1656,7 @@ export default function Optimizador() {
                     <button key={i} onClick={() => setPlanchaActual(i)}
                       className={`w-7 h-7 text-xs rounded-lg border font-medium transition ${
                         i === planchaActual
-                          ? 'bg-blue-500 text-white border-blue-400 shadow-sm shadow-blue-500/30'
+                          ? 'bg-emerald-500 text-white border-emerald-400 shadow-sm shadow-emerald-500/30'
                           : 'border-slate-600 text-slate-400 hover:bg-slate-700 hover:text-white'
                       }`}>{i + 1}</button>
                   ))}
@@ -1671,7 +1671,7 @@ export default function Optimizador() {
               {/* Leyenda */}
               <div className="px-4 py-2 bg-slate-50 border-t border-gray-100 flex flex-wrap items-center gap-4 text-xs text-gray-500">
                 <span className="flex items-center gap-1.5">
-                  <span className="inline-block w-6 h-1 bg-blue-500 rounded"></span>
+                  <span className="inline-block w-6 h-1 bg-emerald-500 rounded"></span>
                   Tapacanto
                 </span>
                 <span className="flex items-center gap-1.5">
@@ -1751,8 +1751,8 @@ export default function Optimizador() {
                       <td className="px-3 py-1.5 text-gray-500">{p.ancho} mm</td>
                       <td className="px-3 py-1.5 text-gray-400">{p.x}</td>
                       <td className="px-3 py-1.5 text-gray-400">{p.y}</td>
-                      <td className="px-3 py-1.5">{p.rotada ? <span className="text-blue-600">↺ Sí</span> : <span className="text-gray-400">No</span>}</td>
-                      <td className="px-3 py-1.5 text-blue-600 font-medium">
+                      <td className="px-3 py-1.5">{p.rotada ? <span className="text-emerald-600">↺ Sí</span> : <span className="text-gray-400">No</span>}</td>
+                      <td className="px-3 py-1.5 text-emerald-600 font-medium">
                         {[p.tapacantoL1 && '▲', p.tapacantoL2 && '▼', p.tapacantoA1 && '◄', p.tapacantoA2 && '►'].filter(Boolean).join(' ') || '—'}
                         {tapaNombre(p.tapacantoId) && (
                           <span className="text-gray-400 ml-1 font-normal text-xs">· {tapaNombre(p.tapacantoId)}</span>
@@ -1772,7 +1772,7 @@ export default function Optimizador() {
             <div className="text-center">
               <div className="text-5xl mb-3 opacity-20">◼</div>
               <p className="text-gray-400 text-sm">Completa las piezas y haz clic en</p>
-              <p className="text-blue-600 font-semibold mt-1 text-sm">⚡ Optimizar</p>
+              <p className="text-emerald-600 font-semibold mt-1 text-sm">⚡ Optimizar</p>
               <p className="text-gray-300 text-xs mt-3">
                 Algoritmo MaxRects · 636 combinaciones · Kerf 3mm incluido
               </p>

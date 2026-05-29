@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { ventasService, cotizacionesService, clientesService, inventarioService } from '../../services'
@@ -221,7 +221,7 @@ export default function Ventas() {
           <p className="text-sm text-gray-500 mt-0.5">{ventas.length} registro{ventas.length !== 1 ? 's' : ''}</p>
         </div>
         <button onClick={() => { setShowModal(true); resetModal(); cargarInventario() }}
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition font-medium">
+          className="bg-emerald-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-emerald-700 transition font-medium">
           + Nueva venta
         </button>
       </div>
@@ -235,7 +235,7 @@ export default function Ventas() {
         {[
           { label: 'Pendientes de pago', value: totales.pendiente, color: 'text-amber-600' },
           { label: 'Pagadas',            value: totales.pagada,    color: 'text-green-600' },
-          { label: 'Total vendido',      value: `Q${totales.monto.toFixed(2)}`, color: 'text-blue-600' },
+          { label: 'Total vendido',      value: `Q${totales.monto.toFixed(2)}`, color: 'text-emerald-600' },
         ].map(({ label, value, color }) => (
           <div key={label} className="bg-white border border-gray-200 rounded-xl p-4">
             <p className="text-xs text-gray-400 mb-1">{label}</p>
@@ -247,7 +247,7 @@ export default function Ventas() {
       {/* Filtros */}
       <div className="bg-white border border-gray-200 rounded-xl p-3 mb-4 flex items-center gap-3">
         <select value={filtroEstado} onChange={e => setFiltroEstado(e.target.value)}
-          className="border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+          className="border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
           <option value="">Todos los estados</option>
           <option value="pendiente_pago">Pendiente de pago</option>
           <option value="pagada">Pagada</option>
@@ -279,7 +279,7 @@ export default function Ventas() {
                   <td colSpan={8} className="text-center py-12">
                     <p className="text-gray-400 text-sm mb-2">No hay ventas registradas</p>
                     <button onClick={() => setShowModal(true)}
-                      className="text-sm text-blue-600 hover:underline font-medium">
+                      className="text-sm text-emerald-600 hover:underline font-medium">
                       Registrar primera venta →
                     </button>
                   </td>
@@ -292,7 +292,7 @@ export default function Ventas() {
                     <td className="px-4 py-3 text-gray-400 text-xs">#{v.id}</td>
                     <td className="px-4 py-3">
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                        v.tipo === 'cotizacion' ? 'bg-blue-50 text-blue-600' : 'bg-purple-50 text-purple-600'
+                        v.tipo === 'cotizacion' ? 'bg-emerald-50 text-emerald-600' : 'bg-purple-50 text-purple-600'
                       }`}>
                         {v.tipo === 'cotizacion' ? `Cot. #${v.cotizacionId}` : 'Directa'}
                       </span>
@@ -328,7 +328,7 @@ export default function Ventas() {
                         </button>
                         {v.tipo === 'cotizacion' && v.cotizacionId && (
                           <button onClick={() => navigate(`/cotizaciones/${v.cotizacionId}`)}
-                            className="text-xs text-blue-600 hover:underline">Ver cot.</button>
+                            className="text-xs text-emerald-600 hover:underline">Ver cot.</button>
                         )}
                         {v.estado !== 'anulada' && (
                           <button onClick={() => anular(v.id)}
@@ -361,7 +361,7 @@ export default function Ventas() {
                   <button key={t} type="button" onClick={() => setTipoVenta(t)}
                     className={`flex-1 py-2.5 rounded-xl border text-sm font-medium transition ${
                       tipoVenta === t
-                        ? 'bg-blue-600 text-white border-blue-600'
+                        ? 'bg-emerald-600 text-white border-emerald-600'
                         : 'border-gray-300 text-gray-600 hover:bg-gray-50'
                     }`}>
                     {t === 'cotizacion' ? '📋 Desde cotización' : '🛒 Venta directa'}
@@ -376,16 +376,16 @@ export default function Ventas() {
                   <div className="flex gap-2">
                     <input type="number" value={cotizId} onChange={e => setCotizId(e.target.value)}
                       placeholder="ID de cotización..."
-                      className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                      className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                     <button type="button" onClick={buscarCotizacion}
                       className="text-sm bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800">
                       Buscar
                     </button>
                   </div>
                   {cotizInfo && (
-                    <div className="mt-2 bg-blue-50 border border-blue-100 rounded-lg px-4 py-3 text-sm">
-                      <p className="font-medium text-blue-800">{cotizInfo.clienteNombre}</p>
-                      <p className="text-blue-600 text-xs mt-0.5">
+                    <div className="mt-2 bg-emerald-50 border border-emerald-100 rounded-lg px-4 py-3 text-sm">
+                      <p className="font-medium text-emerald-800">{cotizInfo.clienteNombre}</p>
+                      <p className="text-emerald-600 text-xs mt-0.5">
                         Total: Q{Number(cotizInfo.total).toFixed(2)} · Estado: {cotizInfo.estado}
                       </p>
                     </div>
@@ -400,13 +400,13 @@ export default function Ventas() {
                     <label className="block text-xs font-medium text-gray-600 mb-1.5">Cliente (opcional)</label>
                     <div className="grid grid-cols-2 gap-2">
                       <select value={clienteId} onChange={e => setClienteId(e.target.value)}
-                        className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
                         <option value="">Seleccionar cliente...</option>
                         {clientes.map(c => <option key={c.id} value={c.id}>{c.nombre}</option>)}
                       </select>
                       <input value={clienteLibre} onChange={e => setClienteLibre(e.target.value)}
                         placeholder="O escribir nombre libre..."
-                        className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                     </div>
                   </div>
 
@@ -418,7 +418,7 @@ export default function Ventas() {
                       value={invSearch}
                       onChange={e => setInvSearch(e.target.value)}
                       placeholder="Escribir nombre de material o herraje..."
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     />
                     {filteredInv.length > 0 && (
                       <div className="absolute z-10 left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-48 overflow-y-auto">
@@ -427,11 +427,11 @@ export default function Ventas() {
                             key={item.inventarioId}
                             type="button"
                             onClick={() => agregarDesdeInventario(item)}
-                            className="w-full text-left px-3 py-2.5 hover:bg-blue-50 flex items-center justify-between border-b border-gray-100 last:border-b-0"
+                            className="w-full text-left px-3 py-2.5 hover:bg-emerald-50 flex items-center justify-between border-b border-gray-100 last:border-b-0"
                           >
                             <div>
                               <span className="text-sm font-medium text-gray-800">{item.nombre}</span>
-                              <span className={`ml-2 text-xs px-1.5 py-0.5 rounded-full ${item.tipoItem === 'material' ? 'bg-blue-50 text-blue-600' : 'bg-purple-50 text-purple-600'}`}>
+                              <span className={`ml-2 text-xs px-1.5 py-0.5 rounded-full ${item.tipoItem === 'material' ? 'bg-emerald-50 text-emerald-600' : 'bg-purple-50 text-purple-600'}`}>
                                 {item.tipoItem}
                               </span>
                             </div>
@@ -457,18 +457,18 @@ export default function Ventas() {
                             <input value={d.descripcion}
                               onChange={e => { const n=[...detalle]; n[i]={...n[i],descripcion:e.target.value,inventarioId:null}; setDetalle(n) }}
                               placeholder="Descripción"
-                              className={`w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${d.inventarioId ? 'border-blue-300 bg-blue-50' : 'border-gray-300'}`} />
+                              className={`w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 ${d.inventarioId ? 'border-emerald-300 bg-emerald-50' : 'border-gray-300'}`} />
                             {d.inventarioId && (
-                              <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-blue-500">inv</span>
+                              <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-emerald-500">inv</span>
                             )}
                           </div>
                           <input type="number" value={d.cantidad} min="0.01" step="0.01"
                             onChange={e => { const n=[...detalle]; n[i]={...n[i],cantidad:e.target.value}; setDetalle(n) }}
-                            className="col-span-2 border border-gray-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                            className="col-span-2 border border-gray-300 rounded-lg px-2 py-2 text-sm text-center focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                           <input type="number" value={d.precioUnitario} min="0" step="0.01"
                             onChange={e => { const n=[...detalle]; n[i]={...n[i],precioUnitario:e.target.value}; setDetalle(n) }}
                             placeholder="Precio"
-                            className="col-span-3 border border-gray-300 rounded-lg px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                            className="col-span-3 border border-gray-300 rounded-lg px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                           {detalle.length > 1 && (
                             <button type="button" onClick={() => setDetalle(detalle.filter((_, j) => j !== i))}
                               className="col-span-1 text-red-400 hover:text-red-600 text-lg">×</button>
@@ -476,7 +476,7 @@ export default function Ventas() {
                         </div>
                       ))}
                       <button type="button" onClick={() => setDetalle([...detalle, detalleInit])}
-                        className="text-xs text-blue-600 hover:underline">+ Agregar ítem manualmente</button>
+                        className="text-xs text-emerald-600 hover:underline">+ Agregar ítem manualmente</button>
                     </div>
                   </div>
                 </div>
@@ -488,7 +488,7 @@ export default function Ventas() {
                   <label className="block text-xs font-medium text-gray-600 mb-1.5">Descuento (Q)</label>
                   <input type="number" value={descuento} min="0" step="0.01"
                     onChange={e => setDescuento(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                 </div>
                 <div className="flex flex-col justify-end">
                   <div className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-right">
@@ -506,15 +506,15 @@ export default function Ventas() {
                     <div key={i} className="grid grid-cols-12 gap-2 items-center">
                       <select value={p.metodo}
                         onChange={e => { const n=[...pagos]; n[i]={...n[i],metodo:e.target.value}; setPagos(n) }}
-                        className="col-span-3 border border-gray-300 rounded-lg px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        className="col-span-3 border border-gray-300 rounded-lg px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
                         {METODOS.map(m => <option key={m} value={m}>{m}</option>)}
                       </select>
                       <input type="number" value={p.monto} min="0" step="0.01" placeholder="Monto"
                         onChange={e => { const n=[...pagos]; n[i]={...n[i],monto:e.target.value}; setPagos(n) }}
-                        className="col-span-3 border border-gray-300 rounded-lg px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        className="col-span-3 border border-gray-300 rounded-lg px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                       <input value={p.referencia} placeholder="Ref. / No. transacción"
                         onChange={e => { const n=[...pagos]; n[i]={...n[i],referencia:e.target.value}; setPagos(n) }}
-                        className="col-span-5 border border-gray-300 rounded-lg px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        className="col-span-5 border border-gray-300 rounded-lg px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                       {pagos.length > 1 && (
                         <button type="button" onClick={() => setPagos(pagos.filter((_, j) => j !== i))}
                           className="col-span-1 text-red-400 hover:text-red-600 text-lg">×</button>
@@ -523,7 +523,7 @@ export default function Ventas() {
                   ))}
                   <div className="flex items-center justify-between">
                     <button type="button" onClick={() => setPagos([...pagos, pagoInit])}
-                      className="text-xs text-blue-600 hover:underline">+ Agregar forma de pago</button>
+                      className="text-xs text-emerald-600 hover:underline">+ Agregar forma de pago</button>
                     <span className={`text-xs font-medium ${totalPagos >= total ? 'text-green-600' : 'text-amber-600'}`}>
                       Pagado: Q{totalPagos.toFixed(2)} / Q{total.toFixed(2)}
                     </span>
@@ -536,14 +536,14 @@ export default function Ventas() {
                 <label className="block text-xs font-medium text-gray-600 mb-1.5">Notas</label>
                 <textarea value={notas} onChange={e => setNotas(e.target.value)}
                   rows={2} placeholder="Observaciones..."
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none" />
               </div>
 
               {error && <p className="text-xs text-red-600 bg-red-50 px-3 py-2 rounded-lg">{error}</p>}
 
               <div className="flex gap-3 pt-2">
                 <button type="submit" disabled={creando}
-                  className="flex-1 bg-blue-600 text-white text-sm font-medium py-2.5 rounded-xl hover:bg-blue-700 disabled:opacity-50 transition">
+                  className="flex-1 bg-emerald-600 text-white text-sm font-medium py-2.5 rounded-xl hover:bg-emerald-700 disabled:opacity-50 transition">
                   {creando ? 'Registrando...' : 'Registrar venta'}
                 </button>
                 <button type="button" onClick={() => setShowModal(false)}
@@ -589,7 +589,7 @@ export default function Ventas() {
               <div>
                 <label className="block text-xs text-gray-500 mb-1">Método de pago *</label>
                 <select value={nuevoPago.metodo} onChange={e => setNuevoPago({ ...nuevoPago, metodo: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
                   {METODOS.map(m => <option key={m} value={m} className="capitalize">{m}</option>)}
                 </select>
               </div>
@@ -597,14 +597,14 @@ export default function Ventas() {
                 <label className="block text-xs text-gray-500 mb-1">Monto (Q) *</label>
                 <input type="number" min="0.01" step="0.01" value={nuevoPago.monto}
                   onChange={e => setNuevoPago({ ...nuevoPago, monto: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   required />
               </div>
               <div>
                 <label className="block text-xs text-gray-500 mb-1">Referencia</label>
                 <input value={nuevoPago.referencia} onChange={e => setNuevoPago({ ...nuevoPago, referencia: e.target.value })}
                   placeholder="No. de transacción, cheque..."
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
               </div>
               <div className="flex gap-2 pt-2">
                 <button type="submit" disabled={pagando}

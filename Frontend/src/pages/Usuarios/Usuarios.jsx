@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { usuariosService } from '../../services'
 
 const formInicial = { nombre: '', email: '', passwordHash: '', rol: 'vendedor' }
 
 const rolColor = {
   admin:    'bg-purple-100 text-purple-700',
-  vendedor: 'bg-blue-100 text-blue-700',
+  vendedor: 'bg-emerald-100 text-emerald-700',
   bodega:   'bg-green-100 text-green-700'
 }
 
@@ -91,7 +91,7 @@ export default function Usuarios() {
         </div>
         <button
           onClick={abrirNuevo}
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 transition"
+          className="bg-emerald-600 text-white text-sm px-4 py-2 rounded hover:bg-emerald-700 transition"
         >
           + Nuevo usuario
         </button>
@@ -112,7 +112,7 @@ export default function Usuarios() {
               <input
                 value={form.nombre}
                 onChange={e => setForm({ ...form, nombre: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -122,7 +122,7 @@ export default function Usuarios() {
                 type="email"
                 value={form.email}
                 onChange={e => setForm({ ...form, email: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -133,7 +133,7 @@ export default function Usuarios() {
                   type="password"
                   value={form.passwordHash}
                   onChange={e => setForm({ ...form, passwordHash: e.target.value })}
-                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   required={!editando}
                 />
               </div>
@@ -143,7 +143,7 @@ export default function Usuarios() {
               <select
                 value={form.rol}
                 onChange={e => setForm({ ...form, rol: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 <option value="admin">admin</option>
                 <option value="vendedor">vendedor</option>
@@ -160,7 +160,7 @@ export default function Usuarios() {
               </button>
               <button
                 type="submit"
-                className="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                className="text-sm px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700"
               >
                 Guardar
               </button>
@@ -179,12 +179,12 @@ export default function Usuarios() {
                 type="password"
                 value={nuevaPass}
                 onChange={e => setNuevaPass(e.target.value)}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
             <button
               onClick={() => cambiarPassword(mostrarPass)}
-              className="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+              className="text-sm px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700"
             >
               Guardar
             </button>
@@ -234,7 +234,7 @@ export default function Usuarios() {
                   <td className="px-4 py-3 flex gap-2 justify-end">
                     <button
                       onClick={() => abrirEditar(u)}
-                      className="text-xs text-blue-600 hover:underline"
+                      className="text-xs text-emerald-600 hover:underline"
                     >
                       Editar
                     </button>

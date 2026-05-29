@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+﻿import { useState, useRef, useEffect, useCallback } from 'react'
 
 const API = 'http://localhost:5244/api'
 const getToken = () => localStorage.getItem('token') ?? ''
@@ -224,7 +224,7 @@ function BoardCanvas({ board, boardW, boardH, showFree, showCuts, showLabels }) 
 
 function MetricCard({ label, value, sub, color = 'blue', big = false }) {
   const colors = {
-    blue:   'border-blue-500/30 bg-blue-950/40 text-blue-300',
+    blue:   'border-emerald-500/30 bg-emerald-950/40 text-emerald-300',
     green:  'border-green-500/30 bg-green-950/40 text-green-300',
     red:    'border-red-500/30 bg-red-950/40 text-red-300',
     yellow: 'border-yellow-500/30 bg-yellow-950/40 text-yellow-300',
@@ -452,7 +452,7 @@ export default function OptimizadorAvanzado() {
       {/* Header */}
       <div className="mb-5">
         <div className="flex items-center gap-3 mb-1">
-          <div className="w-9 h-9 bg-gradient-to-br from-violet-600 to-blue-600 rounded-xl flex items-center justify-center shrink-0">
+          <div className="w-9 h-9 bg-gradient-to-br from-violet-600 to-emerald-600 rounded-xl flex items-center justify-center shrink-0">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
@@ -488,13 +488,13 @@ export default function OptimizadorAvanzado() {
                 <label className="text-[10px] text-slate-500 block mb-1">Largo (mm)</label>
                 <input type="number" value={board.w}
                   onChange={e => setBoard(b => ({ ...b, w: e.target.value }))}
-                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white focus:outline-none focus:border-blue-500" />
+                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white focus:outline-none focus:border-emerald-500" />
               </div>
               <div>
                 <label className="text-[10px] text-slate-500 block mb-1">Ancho (mm)</label>
                 <input type="number" value={board.h}
                   onChange={e => setBoard(b => ({ ...b, h: e.target.value }))}
-                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white focus:outline-none focus:border-blue-500" />
+                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white focus:outline-none focus:border-emerald-500" />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-2">
@@ -502,13 +502,13 @@ export default function OptimizadorAvanzado() {
                 <label className="text-[10px] text-slate-500 block mb-1">Kerf (mm)</label>
                 <input type="number" step="0.5" value={board.kerf}
                   onChange={e => setBoard(b => ({ ...b, kerf: e.target.value }))}
-                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white focus:outline-none focus:border-blue-500" />
+                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white focus:outline-none focus:border-emerald-500" />
               </div>
               <div>
                 <label className="text-[10px] text-slate-500 block mb-1">Tiempo límite (s)</label>
                 <input type="number" min="10" max="180" value={board.timeLimit}
                   onChange={e => setBoard(b => ({ ...b, timeLimit: e.target.value }))}
-                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white focus:outline-none focus:border-blue-500" />
+                  className="w-full bg-slate-800 border border-slate-700 rounded-lg px-2 py-1.5 text-sm text-white focus:outline-none focus:border-emerald-500" />
               </div>
             </div>
           </div>
@@ -518,7 +518,7 @@ export default function OptimizadorAvanzado() {
             <div className="flex items-center justify-between mb-3">
               <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Piezas ({pieces.length})</h2>
               <button onClick={addPiece}
-                className="text-xs px-2 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition">
+                className="text-xs px-2 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition">
                 + Agregar
               </button>
             </div>
@@ -536,7 +536,7 @@ export default function OptimizadorAvanzado() {
                     type="text" placeholder="Nombre de la pieza"
                     value={p.name}
                     onChange={e => updatePiece(p.id, 'name', e.target.value)}
-                    className="w-full bg-slate-700 border border-slate-600 rounded px-2 py-1 text-xs text-white placeholder-slate-500 mb-2 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-slate-700 border border-slate-600 rounded px-2 py-1 text-xs text-white placeholder-slate-500 mb-2 focus:outline-none focus:border-emerald-500"
                   />
 
                   <div className="grid grid-cols-3 gap-1.5 mb-2">
@@ -544,19 +544,19 @@ export default function OptimizadorAvanzado() {
                       <label className="text-[9px] text-slate-500 block mb-0.5">Largo</label>
                       <input type="number" value={p.width}
                         onChange={e => updatePiece(p.id, 'width', e.target.value)}
-                        className="w-full bg-slate-700 border border-slate-600 rounded px-1.5 py-1 text-xs text-white focus:outline-none focus:border-blue-500" />
+                        className="w-full bg-slate-700 border border-slate-600 rounded px-1.5 py-1 text-xs text-white focus:outline-none focus:border-emerald-500" />
                     </div>
                     <div>
                       <label className="text-[9px] text-slate-500 block mb-0.5">Ancho</label>
                       <input type="number" value={p.height}
                         onChange={e => updatePiece(p.id, 'height', e.target.value)}
-                        className="w-full bg-slate-700 border border-slate-600 rounded px-1.5 py-1 text-xs text-white focus:outline-none focus:border-blue-500" />
+                        className="w-full bg-slate-700 border border-slate-600 rounded px-1.5 py-1 text-xs text-white focus:outline-none focus:border-emerald-500" />
                     </div>
                     <div>
                       <label className="text-[9px] text-slate-500 block mb-0.5">Cant.</label>
                       <input type="number" min="1" value={p.quantity}
                         onChange={e => updatePiece(p.id, 'quantity', e.target.value)}
-                        className="w-full bg-slate-700 border border-slate-600 rounded px-1.5 py-1 text-xs text-white focus:outline-none focus:border-blue-500" />
+                        className="w-full bg-slate-700 border border-slate-600 rounded px-1.5 py-1 text-xs text-white focus:outline-none focus:border-emerald-500" />
                     </div>
                   </div>
 
@@ -588,7 +588,7 @@ export default function OptimizadorAvanzado() {
           <button
             onClick={handleRun}
             disabled={running || pieces.length === 0}
-            className="w-full py-3 rounded-xl font-semibold text-sm transition-all bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-white shadow-lg">
+            className="w-full py-3 rounded-xl font-semibold text-sm transition-all bg-gradient-to-r from-violet-600 to-emerald-600 hover:from-violet-500 hover:to-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed text-white shadow-lg">
             {running
               ? <span className="flex items-center justify-center gap-2">
                   <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
@@ -628,7 +628,7 @@ export default function OptimizadorAvanzado() {
                 <div className="relative w-20 h-20 mx-auto mb-4">
                   <div className="absolute inset-0 border-4 border-violet-500/20 rounded-full"/>
                   <div className="absolute inset-0 border-4 border-transparent border-t-violet-500 rounded-full animate-spin"/>
-                  <div className="absolute inset-2 border-4 border-transparent border-t-blue-400 rounded-full animate-spin" style={{animationDirection:'reverse',animationDuration:'0.7s'}}/>
+                  <div className="absolute inset-2 border-4 border-transparent border-t-emerald-400 rounded-full animate-spin" style={{animationDirection:'reverse',animationDuration:'0.7s'}}/>
                 </div>
                 <p className="text-slate-300 font-medium">Ejecutando motor industrial…</p>
                 <p className="text-xs text-slate-500 mt-1">MaxRects · Guillotine · Skyline · Shelf · GA · Compaction</p>
@@ -671,7 +671,7 @@ export default function OptimizadorAvanzado() {
                       onClick={() => setActive(i)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium transition ${
                         activeBoard === i
-                          ? 'bg-blue-600 text-white'
+                          ? 'bg-emerald-600 text-white'
                           : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
                       }`}>
                       Tablero {b.number}

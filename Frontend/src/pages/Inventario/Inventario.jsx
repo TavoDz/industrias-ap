@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { inventarioService, materialesService, herrajesService } from '../../services'
 
 const formInicial = { tipoItem: 'material', itemId: '', cantidad: '', minimo: '' }
@@ -96,7 +96,7 @@ export default function Inventario() {
         </div>
         <button
           onClick={abrirNuevo}
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 transition"
+          className="bg-emerald-600 text-white text-sm px-4 py-2 rounded hover:bg-emerald-700 transition"
         >
           + Agregar registro
         </button>
@@ -132,7 +132,7 @@ export default function Inventario() {
               <select
                 value={form.tipoItem}
                 onChange={e => setForm({ ...form, tipoItem: e.target.value, itemId: '' })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 <option value="material">Material</option>
                 <option value="herraje">Herraje</option>
@@ -143,7 +143,7 @@ export default function Inventario() {
               <select
                 value={form.itemId}
                 onChange={e => setForm({ ...form, itemId: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               >
                 <option value="">Seleccionar...</option>
@@ -160,7 +160,7 @@ export default function Inventario() {
                 step="0.01"
                 value={form.cantidad}
                 onChange={e => setForm({ ...form, cantidad: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -171,7 +171,7 @@ export default function Inventario() {
                 step="0.01"
                 value={form.minimo}
                 onChange={e => setForm({ ...form, minimo: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
             <div className="col-span-2 flex gap-2 justify-end">
@@ -184,7 +184,7 @@ export default function Inventario() {
               </button>
               <button
                 type="submit"
-                className="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                className="text-sm px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700"
               >
                 Guardar
               </button>
@@ -219,7 +219,7 @@ export default function Inventario() {
                     <td className="px-4 py-3">
                       <span className={`text-xs px-2 py-1 rounded font-medium ${
                         item.tipoItem === 'material'
-                          ? 'bg-blue-100 text-blue-700'
+                          ? 'bg-emerald-100 text-emerald-700'
                           : 'bg-green-100 text-green-700'
                       }`}>
                         {item.tipoItem}
@@ -242,7 +242,7 @@ export default function Inventario() {
                       )}
                     </td>
                     <td className="px-4 py-3 flex gap-2 justify-end">
-                      <button onClick={() => abrirEditar(item)} className="text-xs text-blue-600 hover:underline">Editar</button>
+                      <button onClick={() => abrirEditar(item)} className="text-xs text-emerald-600 hover:underline">Editar</button>
                       <button onClick={() => eliminar(item.id)} className="text-xs text-red-500 hover:underline">Eliminar</button>
                     </td>
                   </tr>

@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { proyectosService } from '../../services'
 
 const ESTADO_CONFIG = {
   pendiente:   { label: 'Pendiente',   cls: 'bg-amber-100 text-amber-700 border-amber-200'  },
-  en_proceso:  { label: 'En proceso',  cls: 'bg-blue-100  text-blue-700  border-blue-200'   },
+  en_proceso:  { label: 'En proceso',  cls: 'bg-emerald-100  text-emerald-700  border-emerald-200'   },
   finalizado:  { label: 'Finalizado',  cls: 'bg-green-100 text-green-700 border-green-200'  },
 }
 
@@ -112,13 +112,13 @@ export default function Proyectos() {
       <div className="grid grid-cols-3 gap-3 mb-5">
         {[
           { label: 'Pendientes',  key: 'pendiente',  color: 'text-amber-600' },
-          { label: 'En proceso',  key: 'en_proceso', color: 'text-blue-600'  },
+          { label: 'En proceso',  key: 'en_proceso', color: 'text-emerald-600'  },
           { label: 'Finalizados', key: 'finalizado', color: 'text-green-600' },
         ].map(({ label, key, color }) => (
           <button key={key}
             onClick={() => setFiltroEstado(filtroEstado === key ? '' : key)}
             className={`bg-white border rounded-xl p-4 text-left transition hover:shadow-sm ${
-              filtroEstado === key ? 'border-blue-400 ring-2 ring-blue-100' : 'border-gray-200'
+              filtroEstado === key ? 'border-emerald-400 ring-2 ring-emerald-100' : 'border-gray-200'
             }`}>
             <p className="text-xs text-gray-400 mb-1">{label}</p>
             <p className={`text-2xl font-bold ${color}`}>{counts[key]}</p>
@@ -154,7 +154,7 @@ export default function Proyectos() {
               {/* Card header */}
               <div className={`px-1 py-1 ${
                 p.estado === 'finalizado' ? 'bg-green-500' :
-                p.estado === 'en_proceso' ? 'bg-blue-500' : 'bg-amber-400'
+                p.estado === 'en_proceso' ? 'bg-emerald-500' : 'bg-amber-400'
               }`} />
 
               <div className="px-5 pt-4 pb-3 border-b border-gray-100">
@@ -172,7 +172,7 @@ export default function Proyectos() {
                 <div className="flex justify-between text-xs text-gray-400">
                   <span>Cotización</span>
                   <button onClick={() => navigate(`/cotizaciones/${p.cotizacionId}`)}
-                    className="text-blue-500 hover:underline font-medium">
+                    className="text-emerald-500 hover:underline font-medium">
                     #{p.cotizacionId} — Q{Number(p.cotizacionTotal).toFixed(2)}
                   </button>
                 </div>
@@ -190,7 +190,7 @@ export default function Proyectos() {
                 {p.totalOptimizaciones > 0 && (
                   <div className="flex justify-between text-xs text-gray-400">
                     <span>Optimizaciones</span>
-                    <span className="text-blue-500 font-medium">{p.totalOptimizaciones} corte{p.totalOptimizaciones > 1 ? 's' : ''}</span>
+                    <span className="text-emerald-500 font-medium">{p.totalOptimizaciones} corte{p.totalOptimizaciones > 1 ? 's' : ''}</span>
                   </div>
                 )}
                 {p.notas && (
@@ -226,20 +226,20 @@ export default function Proyectos() {
                     <div>
                       <label className="block text-xs text-gray-500 mb-1">Nombre</label>
                       <input value={editForm.nombre} onChange={e => setEditForm({ ...editForm, nombre: e.target.value })}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        className="w-full border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                     </div>
                     <div className="grid grid-cols-2 gap-2">
                       <div>
                         <label className="block text-xs text-gray-500 mb-1">Inicio</label>
                         <input type="date" value={editForm.fechaInicio}
                           onChange={e => setEditForm({ ...editForm, fechaInicio: e.target.value })}
-                          className="w-full border border-gray-300 rounded-lg px-2 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                          className="w-full border border-gray-300 rounded-lg px-2 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                       </div>
                       <div>
                         <label className="block text-xs text-gray-500 mb-1">Entrega</label>
                         <input type="date" value={editForm.fechaEntrega}
                           onChange={e => setEditForm({ ...editForm, fechaEntrega: e.target.value })}
-                          className="w-full border border-gray-300 rounded-lg px-2 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                          className="w-full border border-gray-300 rounded-lg px-2 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                       </div>
                     </div>
                     <div>
@@ -247,11 +247,11 @@ export default function Proyectos() {
                       <textarea value={editForm.notas}
                         onChange={e => setEditForm({ ...editForm, notas: e.target.value })}
                         rows={2}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
+                        className="w-full border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none" />
                     </div>
                     <div className="flex gap-2">
                       <button onClick={() => guardarEdicion(p.id)}
-                        className="flex-1 text-xs bg-blue-600 text-white py-1.5 rounded-lg hover:bg-blue-700 font-medium">
+                        className="flex-1 text-xs bg-emerald-600 text-white py-1.5 rounded-lg hover:bg-emerald-700 font-medium">
                         Guardar
                       </button>
                       <button onClick={() => setShowEdit(null)}

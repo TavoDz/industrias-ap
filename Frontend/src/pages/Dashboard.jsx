@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { clientesService, cotizacionesService, optimizacionesService, inventarioService } from '../services'
@@ -18,7 +18,7 @@ const MESES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov'
 
 function StatCard({ label, value, sub, color = 'blue', onClick }) {
   const ring = {
-    blue:   'bg-blue-50 text-blue-700 border-blue-100',
+    blue:   'bg-emerald-50 text-emerald-700 border-emerald-100',
     green:  'bg-green-50 text-green-700 border-green-100',
     amber:  'bg-amber-50 text-amber-700 border-amber-100',
     purple: 'bg-purple-50 text-purple-700 border-purple-100',
@@ -169,7 +169,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {[
             { label: 'Ingresos aprobados',    value: `Q${totalAprobado.toFixed(2)}`,                                         color: 'text-emerald-600' },
-            { label: 'Tasa de aprobación',    value: `${Math.round((cotizaciones.filter(c=>c.estado==='aprobada').length / cotizaciones.length)*100)}%`, color: 'text-blue-600' },
+            { label: 'Tasa de aprobación',    value: `${Math.round((cotizaciones.filter(c=>c.estado==='aprobada').length / cotizaciones.length)*100)}%`, color: 'text-emerald-600' },
             { label: 'Ticket promedio',       value: `Q${(totalAprobado / Math.max(1, cotizaciones.filter(c=>c.estado==='aprobada').length)).toFixed(2)}`, color: 'text-violet-600' },
           ].map(({ label, value, color }) => (
             <div key={label} className="bg-white border border-gray-200 rounded-xl p-4">
@@ -193,7 +193,7 @@ export default function Dashboard() {
                 <XAxis dataKey="mes" tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={25} />
                 <Tooltip content={<TooltipMoneda />} />
-                <Bar dataKey="Cotizaciones" fill="#3b82f6" radius={[4,4,0,0]} maxBarSize={32} />
+                <Bar dataKey="Cotizaciones" fill="#10b981" radius={[4,4,0,0]} maxBarSize={32} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -246,7 +246,7 @@ export default function Dashboard() {
         <h3 className="text-sm font-semibold text-gray-600 mb-3">Accesos rápidos</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
-            { label: '+ Nueva cotización', path: '/cotizaciones',   color: 'bg-blue-600 text-white hover:bg-blue-700' },
+            { label: '+ Nueva cotización', path: '/cotizaciones',   color: 'bg-emerald-600 text-white hover:bg-emerald-700' },
             { label: '⚡ Nuevo corte',     path: '/optimizador',    color: 'bg-slate-800 text-white hover:bg-slate-700' },
             { label: '+ Nuevo cliente',    path: '/clientes',       color: 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50' },
             { label: '📂 Historial',       path: '/optimizaciones', color: 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50' },
@@ -264,7 +264,7 @@ export default function Dashboard() {
         <div>
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-sm font-semibold text-gray-600">Cotizaciones recientes</h3>
-            <button onClick={() => navigate('/cotizaciones')} className="text-xs text-blue-600 hover:underline">
+            <button onClick={() => navigate('/cotizaciones')} className="text-xs text-emerald-600 hover:underline">
               Ver todas →
             </button>
           </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { cotizacionesService } from '../../services'
 
@@ -59,7 +59,7 @@ export default function CotizacionPDF() {
         </button>
         <div className="flex-1" />
         <button onClick={exportar}
-          className="bg-blue-600 text-white text-sm px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-sm font-medium">
+          className="bg-emerald-600 text-white text-sm px-5 py-2.5 rounded-lg hover:bg-emerald-700 transition shadow-sm font-medium">
           ⬇ Exportar PDF
         </button>
       </div>
@@ -88,13 +88,13 @@ export default function CotizacionPDF() {
                   padding: '12px 18px', marginBottom: '12px'
                 }}>
                   <div style={{
-                    width: '36px', height: '36px', background: '#3b82f6',
+                    width: '36px', height: '36px', background: '#10b981',
                     borderRadius: '8px', display: 'flex', alignItems: 'center',
                     justifyContent: 'center', color: '#fff', fontWeight: '800', fontSize: '18px'
                   }}>A</div>
                   <div>
                     <div style={{ color: '#fff', fontWeight: '700', fontSize: '16px', letterSpacing: '-0.3px' }}>Industrias AP</div>
-                    <div style={{ color: '#93c5fd', fontSize: '10px', marginTop: '1px' }}>Carpintería & Mobiliario</div>
+                    <div style={{ color: '#6ee7b7', fontSize: '10px', marginTop: '1px' }}>Carpintería & Mobiliario</div>
                   </div>
                 </div>
                 <div style={{ color: '#64748b', fontSize: '11px', lineHeight: '1.8' }}>
@@ -199,7 +199,7 @@ export default function CotizacionPDF() {
                             marginBottom: i < nombresMateriales.length - 1 ? '6px' : '0',
                             borderBottom: i < nombresMateriales.length - 1 ? '1px solid #f1f5f9' : 'none',
                           }}>
-                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#3b82f6', flexShrink: 0 }} />
+                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981', flexShrink: 0 }} />
                             <span style={{ fontSize: '11px', color: '#334155' }}>{n}</span>
                           </div>
                         ))}
@@ -212,7 +212,7 @@ export default function CotizacionPDF() {
                       background: S.accent, borderRadius: '8px',
                       padding: '14px 16px', textAlign: 'center'
                     }}>
-                      <div style={{ color: '#93c5fd', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>
+                      <div style={{ color: '#6ee7b7', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>
                         Acabado seleccionado
                       </div>
                       <div style={{ color: '#fff', fontSize: '18px', fontWeight: '800', letterSpacing: '-0.5px' }}>
@@ -256,19 +256,19 @@ export default function CotizacionPDF() {
           display: 'flex', justifyContent: 'space-between', alignItems: 'center'
         }}>
           <div>
-            <div style={{ color: '#93c5fd', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>
+            <div style={{ color: '#6ee7b7', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>
               Precio total
             </div>
             <div style={{ color: '#fff', fontSize: '32px', fontWeight: '800', letterSpacing: '-1px' }}>
               Q{Number(cot.total || 0).toFixed(2)}
             </div>
             {cot.tiempoEstimadoDias && (
-              <div style={{ color: '#93c5fd', fontSize: '11px', marginTop: '4px' }}>
+              <div style={{ color: '#6ee7b7', fontSize: '11px', marginTop: '4px' }}>
                 Entrega estimada: {cot.tiempoEstimadoDias} días hábiles
               </div>
             )}
           </div>
-          <div style={{ textAlign: 'right', color: '#93c5fd', fontSize: '11px' }}>
+          <div style={{ textAlign: 'right', color: '#6ee7b7', fontSize: '11px' }}>
             <div style={{ marginBottom: '3px' }}>Este precio es válido por 15 días</div>
             <div>a partir de la fecha de emisión</div>
           </div>
@@ -347,7 +347,7 @@ export default function CotizacionPDF() {
 function SectionTitle({ title }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-      <div style={{ width: '3px', height: '14px', background: '#3b82f6', borderRadius: '2px', flexShrink: 0 }} />
+      <div style={{ width: '3px', height: '14px', background: '#10b981', borderRadius: '2px', flexShrink: 0 }} />
       <span style={{ fontWeight: '700', fontSize: '11px', color: '#1e3a5f', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
         {title}
       </span>

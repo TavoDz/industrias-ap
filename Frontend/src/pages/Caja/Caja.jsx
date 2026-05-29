@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { cajaService, ventasService } from '../../services'
 
@@ -217,7 +217,7 @@ export default function Caja() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {[
                   { label: 'Efectivo',       value: cajaData.totalEfectivo,      color: 'text-green-600' },
-                  { label: 'Transferencia',  value: cajaData.totalTransferencia, color: 'text-blue-600'  },
+                  { label: 'Transferencia',  value: cajaData.totalTransferencia, color: 'text-emerald-600'  },
                   { label: 'Tarjeta',        value: cajaData.totalTarjeta,       color: 'text-purple-600'},
                   { label: 'Salidas',        value: cajaData.totalSalidas,       color: 'text-red-500'   },
                 ].map(({ label, value, color }) => (
@@ -270,7 +270,7 @@ export default function Caja() {
                           <td className="px-4 py-2.5">
                             <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
                               m.tipo === 'venta'   ? 'bg-emerald-100 text-emerald-700' :
-                              m.tipo === 'entrada' ? 'bg-blue-100 text-blue-700' :
+                              m.tipo === 'entrada' ? 'bg-emerald-100 text-emerald-700' :
                               'bg-red-100 text-red-600'
                             }`}>
                               {m.tipo}
@@ -342,13 +342,13 @@ export default function Caja() {
                 <label className="block text-xs text-gray-500 mb-1">Monto de apertura (Q) *</label>
                 <input type="number" min="0" step="0.01" value={montoApertura}
                   onChange={e => setMontoApertura(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
               </div>
               <div>
                 <label className="block text-xs text-gray-500 mb-1">Notas</label>
                 <textarea value={notasApertura} onChange={e => setNotasApertura(e.target.value)}
                   rows={2}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none" />
               </div>
               <div className="flex gap-2 pt-2">
                 <button type="submit" disabled={abriendo}
@@ -376,7 +376,7 @@ export default function Caja() {
                 <label className="block text-xs text-gray-500 mb-1">Efectivo contado en caja (Q) *</label>
                 <input type="number" min="0" step="0.01" value={montoCierre}
                   onChange={e => setMontoCierre(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   required />
                 {montoCierre && (
                   <p className={`text-xs mt-1 ${
@@ -391,7 +391,7 @@ export default function Caja() {
                 <label className="block text-xs text-gray-500 mb-1">Notas de cierre</label>
                 <textarea value={notasCierre} onChange={e => setNotasCierre(e.target.value)}
                   rows={2}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" />
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none" />
               </div>
               <div className="flex gap-2 pt-2">
                 <button type="submit" disabled={cerrando}
@@ -419,7 +419,7 @@ export default function Caja() {
                   <button key={t} type="button" onClick={() => setMovForm({ ...movForm, tipo: t })}
                     className={`flex-1 py-2 rounded-lg border text-sm font-medium transition capitalize ${
                       movForm.tipo === t
-                        ? t === 'entrada' ? 'bg-blue-600 text-white border-blue-600' : 'bg-red-600 text-white border-red-600'
+                        ? t === 'entrada' ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-red-600 text-white border-red-600'
                         : 'border-gray-300 text-gray-600 hover:bg-gray-50'
                     }`}>
                     {t === 'entrada' ? '↑ Entrada' : '↓ Salida'}
@@ -430,7 +430,7 @@ export default function Caja() {
                 <label className="block text-xs text-gray-500 mb-1">Concepto *</label>
                 <input value={movForm.concepto} onChange={e => setMovForm({ ...movForm, concepto: e.target.value })}
                   placeholder="Ej: Pago de proveedor, fondo de caja..."
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   required />
               </div>
               <div className="grid grid-cols-2 gap-2">
@@ -438,13 +438,13 @@ export default function Caja() {
                   <label className="block text-xs text-gray-500 mb-1">Monto (Q) *</label>
                   <input type="number" min="0.01" step="0.01" value={movForm.monto}
                     onChange={e => setMovForm({ ...movForm, monto: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     required />
                 </div>
                 <div>
                   <label className="block text-xs text-gray-500 mb-1">Método</label>
                   <select value={movForm.metodo} onChange={e => setMovForm({ ...movForm, metodo: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
                     {METODOS.map(m => <option key={m} value={m}>{m}</option>)}
                   </select>
                 </div>
@@ -453,11 +453,11 @@ export default function Caja() {
                 <label className="block text-xs text-gray-500 mb-1">Referencia</label>
                 <input value={movForm.referencia} onChange={e => setMovForm({ ...movForm, referencia: e.target.value })}
                   placeholder="Opcional..."
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
               </div>
               <div className="flex gap-2 pt-2">
                 <button type="submit" disabled={guardandoMov}
-                  className="flex-1 bg-blue-600 text-white text-sm font-medium py-2.5 rounded-xl hover:bg-blue-700 disabled:opacity-50">
+                  className="flex-1 bg-emerald-600 text-white text-sm font-medium py-2.5 rounded-xl hover:bg-emerald-700 disabled:opacity-50">
                   {guardandoMov ? 'Guardando...' : 'Registrar'}
                 </button>
                 <button type="button" onClick={() => setShowMov(false)}

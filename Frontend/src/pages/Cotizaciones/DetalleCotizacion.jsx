@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import {
@@ -52,7 +52,7 @@ function SectionHeader({ count, label, onAdd, addLabel = '+ Agregar' }) {
       <p className="text-xs text-gray-500 font-medium">{count} {label}</p>
       {onAdd && (
         <button onClick={onAdd}
-          className="text-xs bg-blue-600 text-white px-3 py-1.5 rounded-lg hover:bg-blue-700 transition font-medium">
+          className="text-xs bg-emerald-600 text-white px-3 py-1.5 rounded-lg hover:bg-emerald-700 transition font-medium">
           {addLabel}
         </button>
       )}
@@ -543,14 +543,14 @@ export default function DetalleCotizacion() {
                 <button key={t.key} onClick={() => setTab(t.key)}
                   className={`flex-shrink-0 px-4 py-3 text-sm font-medium transition flex items-center gap-1.5 ${
                     tab === t.key
-                      ? 'border-b-2 border-blue-600 text-blue-700 bg-white'
+                      ? 'border-b-2 border-emerald-600 text-emerald-700 bg-white'
                       : 'text-gray-500 hover:text-gray-700'
                   }`}>
                   <span>{t.icon}</span>
                   <span>{t.label}</span>
                   {tabCounts[t.key] > 0 && (
                     <span className={`text-xs px-1.5 py-0.5 rounded-full font-bold ${
-                      tab === t.key ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'
+                      tab === t.key ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-500'
                     }`}>{tabCounts[t.key]}</span>
                   )}
                 </button>
@@ -568,7 +568,7 @@ export default function DetalleCotizacion() {
                       onChange={e => setInfoForm({ ...infoForm, descripcionGeneral: e.target.value })}
                       rows={3}
                       placeholder="Ej: Mueble de cocina en roble, 3 módulos superiores + isla central..."
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
                     />
                   </div>
                   <div>
@@ -578,7 +578,7 @@ export default function DetalleCotizacion() {
                       value={infoForm.tiempoEstimadoDias}
                       onChange={e => setInfoForm({ ...infoForm, tiempoEstimadoDias: e.target.value })}
                       placeholder="Ej: 15"
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     />
                   </div>
                   <div />
@@ -589,7 +589,7 @@ export default function DetalleCotizacion() {
                       onChange={e => setInfoForm({ ...infoForm, observaciones: e.target.value })}
                       rows={2}
                       placeholder="Notas adicionales para el cliente..."
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
                     />
                   </div>
                   <div className="md:col-span-2">
@@ -599,13 +599,13 @@ export default function DetalleCotizacion() {
                       onChange={e => setInfoForm({ ...infoForm, terminos: e.target.value })}
                       rows={2}
                       placeholder="Ej: 50% de anticipo para iniciar producción. Saldo contra entrega."
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
                     />
                   </div>
                 </div>
                 <div className="pt-2">
                   <button type="submit" disabled={savingInfo}
-                    className="text-sm bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 font-medium transition">
+                    className="text-sm bg-emerald-600 text-white px-5 py-2 rounded-lg hover:bg-emerald-700 disabled:opacity-50 font-medium transition">
                     {savingInfo ? 'Guardando...' : 'Guardar información'}
                   </button>
                 </div>
@@ -640,7 +640,7 @@ export default function DetalleCotizacion() {
                       onChange={e => setNuevoComentario(e.target.value)}
                       placeholder="Agregar nota interna..."
                       rows={2}
-                      className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                      className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
                     />
                     <button type="button" onClick={agregarComentario}
                       disabled={enviandoComent || !nuevoComentario.trim()}
@@ -656,14 +656,14 @@ export default function DetalleCotizacion() {
             {tab === 'materiales' && (
               <div>
                 {/* Buscador */}
-                <div className="p-4 border-b border-gray-100 bg-blue-50/40">
+                <div className="p-4 border-b border-gray-100 bg-emerald-50/40">
                   <div className="relative">
                     <input
                       type="text"
                       value={matSearch}
                       onChange={e => { setMatSearch(e.target.value); setMatSelect(null) }}
                       placeholder="Buscar material... Ej: MDF 18mm, Plywood, Melamina"
-                      className="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                      className="w-full border border-gray-300 rounded-lg pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
                     />
                     <span className="absolute left-3 top-2.5 text-gray-400 text-sm">🔍</span>
                   </div>
@@ -674,12 +674,12 @@ export default function DetalleCotizacion() {
                       {matsFiltrados.map(m => (
                         <button key={m.id} type="button"
                           onClick={() => seleccionarMaterial(m)}
-                          className="w-full text-left px-4 py-2.5 text-sm hover:bg-blue-50 transition flex items-center justify-between border-b border-gray-50 last:border-0">
+                          className="w-full text-left px-4 py-2.5 text-sm hover:bg-emerald-50 transition flex items-center justify-between border-b border-gray-50 last:border-0">
                           <div>
                             <span className="font-medium text-gray-800">{m.nombre}</span>
                             <span className="text-xs text-gray-400 ml-2">{m.tipo} · {m.grosor}mm</span>
                           </div>
-                          <span className="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full">
+                          <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
                             Q{Number(m.precioTablero).toFixed(2)}/plancha
                           </span>
                         </button>
@@ -689,7 +689,7 @@ export default function DetalleCotizacion() {
 
                   {/* Form de cantidad una vez seleccionado el material */}
                   {matSelect && (
-                    <div className="mt-3 bg-white border border-blue-200 rounded-xl p-4">
+                    <div className="mt-3 bg-white border border-emerald-200 rounded-xl p-4">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="text-sm font-semibold text-gray-800">{matSelect.nombre}</span>
                         <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
@@ -704,17 +704,17 @@ export default function DetalleCotizacion() {
                           <input type="number" step="0.5" min="0.1"
                             value={fmat.cantidadPlanchas}
                             onChange={e => setFmat({ ...fmat, cantidadPlanchas: e.target.value })}
-                            className="w-40 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-40 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                           />
                         </div>
                         {previewMat() !== null && (
-                          <p className="text-xs text-blue-700 bg-blue-50 px-3 py-2 rounded-lg font-medium">
+                          <p className="text-xs text-emerald-700 bg-emerald-50 px-3 py-2 rounded-lg font-medium">
                             Subtotal: Q{previewMat().toFixed(2)}
                           </p>
                         )}
                       </div>
                       <button type="button" onClick={agregarMaterial} disabled={savingMat}
-                        className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 font-medium transition">
+                        className="text-sm bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 disabled:opacity-50 font-medium transition">
                         {savingMat ? 'Agregando...' : '+ Agregar material'}
                       </button>
                     </div>
@@ -743,7 +743,7 @@ export default function DetalleCotizacion() {
                               value={editMat[m.id] ?? m.cantidadPlanchas}
                               onChange={e => setEditMat({ ...editMat, [m.id]: e.target.value })}
                               onBlur={() => actualizarCantidadMat(m)}
-                              className="w-20 border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-blue-400"
+                              className="w-20 border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-emerald-400"
                             />
                           </td>
                           <td className="px-4 py-3 text-gray-500 text-xs">{fmt(m.precioUnitario)}</td>
@@ -778,15 +778,15 @@ export default function DetalleCotizacion() {
                 />
 
                 {showFormH && (
-                  <form onSubmit={addHerraje} className="p-4 bg-blue-50/50 border-b border-blue-100">
+                  <form onSubmit={addHerraje} className="p-4 bg-emerald-50/50 border-b border-emerald-100">
                     <div className="mb-2">
                       <label className="block text-xs text-gray-500 mb-1">Buscar herraje</label>
                       <input type="text" value={herSearch} onChange={e => setHerSearch(e.target.value)}
                         placeholder="Bisagra, corredera, jalador..."
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 mb-2"
                       />
                       <select value={fh.herrajeId} onChange={e => setFh({ ...fh, herrajeId: e.target.value })}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                         required size={Math.min(hersFiltrados.length + 1, 5)}>
                         <option value="">— Seleccionar —</option>
                         {hersFiltrados.map(h => (
@@ -800,18 +800,18 @@ export default function DetalleCotizacion() {
                       <div className="w-28">
                         <label className="block text-xs text-gray-500 mb-1">Cantidad *</label>
                         <input type="number" min="1" value={fh.cantidad} onChange={e => setFh({ ...fh, cantidad: e.target.value })}
-                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                           required />
                       </div>
                       {fh.herrajeId && fh.cantidad && (
-                        <p className="text-xs text-blue-700 bg-blue-100 px-3 py-2 rounded-lg font-medium">
+                        <p className="text-xs text-emerald-700 bg-emerald-100 px-3 py-2 rounded-lg font-medium">
                           Sub: Q{((allHers.find(h => String(h.id) === String(fh.herrajeId))?.precioUnitario || 0) * parseInt(fh.cantidad || 1)).toFixed(2)}
                         </p>
                       )}
                     </div>
                     <div className="flex gap-2 mt-3">
                       <button type="submit"
-                        className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-medium">
+                        className="text-sm bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 font-medium">
                         Agregar
                       </button>
                       <button type="button" onClick={() => { setShowFormH(false); setFh({ herrajeId: '', cantidad: 1 }); setHerSearch('') }}
@@ -842,7 +842,7 @@ export default function DetalleCotizacion() {
                             value={editQtyH[`h${h.id}`] ?? h.cantidad}
                             onChange={e => setEditQtyH({ ...editQtyH, [`h${h.id}`]: e.target.value })}
                             onBlur={e => { if (String(e.target.value) !== String(h.cantidad)) editarCantHerraje(h, e.target.value) }}
-                            className="w-16 border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-blue-400"
+                            className="w-16 border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-emerald-400"
                           />
                         </td>
                         <td className="px-4 py-3 text-gray-500 text-xs">{fmt(h.precioUnitario)}</td>
@@ -876,12 +876,12 @@ export default function DetalleCotizacion() {
                 />
 
                 {showFormS && (
-                  <form onSubmit={addServicio} className="p-4 bg-blue-50/50 border-b border-blue-100">
+                  <form onSubmit={addServicio} className="p-4 bg-emerald-50/50 border-b border-emerald-100">
                     <div className="grid grid-cols-2 gap-3 mb-3">
                       <div>
                         <label className="block text-xs text-gray-500 mb-1">Servicio *</label>
                         <select value={fs.servicioId} onChange={e => setFs({ ...fs, servicioId: e.target.value })}
-                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                           required>
                           <option value="">Seleccionar...</option>
                           {allSers.map(s => (
@@ -894,17 +894,17 @@ export default function DetalleCotizacion() {
                       <div>
                         <label className="block text-xs text-gray-500 mb-1">Cantidad *</label>
                         <input type="number" min="1" value={fs.cantidad} onChange={e => setFs({ ...fs, cantidad: e.target.value })}
-                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                           required />
                       </div>
                     </div>
                     {fs.servicioId && (
-                      <p className="text-xs text-blue-700 bg-blue-100 px-3 py-1.5 rounded-lg mb-3 font-medium">
+                      <p className="text-xs text-emerald-700 bg-emerald-100 px-3 py-1.5 rounded-lg mb-3 font-medium">
                         Sub: Q{((allSers.find(s => String(s.id) === String(fs.servicioId))?.costo || 0) * parseInt(fs.cantidad || 1)).toFixed(2)}
                       </p>
                     )}
                     <div className="flex gap-2">
-                      <button type="submit" className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-medium">Agregar</button>
+                      <button type="submit" className="text-sm bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 font-medium">Agregar</button>
                       <button type="button" onClick={() => { setShowFormS(false); setFs({ servicioId: '', cantidad: 1 }) }}
                         className="text-sm border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 text-gray-600">Cancelar</button>
                     </div>
@@ -931,7 +931,7 @@ export default function DetalleCotizacion() {
                             value={editQtyS[`s${s.id}`] ?? s.cantidad}
                             onChange={e => setEditQtyS({ ...editQtyS, [`s${s.id}`]: e.target.value })}
                             onBlur={e => { if (String(e.target.value) !== String(s.cantidad)) editarCantServicio(s, e.target.value) }}
-                            className="w-16 border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-blue-400"
+                            className="w-16 border border-gray-200 rounded px-2 py-1 text-sm text-center focus:outline-none focus:ring-1 focus:ring-emerald-400"
                           />
                         </td>
                         <td className="px-4 py-3 text-gray-500 text-xs">{fmt(s.precio)}</td>
@@ -968,7 +968,7 @@ export default function DetalleCotizacion() {
                       <label className="block text-xs text-gray-500 mb-1">Descripción *</label>
                       <input value={fmao.descripcion} onChange={e => setFmao({ ...fmao, descripcion: e.target.value })}
                         placeholder="Ej: Corte y enchapado, Armado e instalación..."
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                         required />
                     </div>
                     <div className="w-36">
@@ -976,11 +976,11 @@ export default function DetalleCotizacion() {
                       <input type="number" step="0.01" min="0"
                         value={fmao.costo} onChange={e => setFmao({ ...fmao, costo: e.target.value })}
                         placeholder="0.00"
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                         required />
                     </div>
                     <button type="submit" disabled={savingMao}
-                      className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 font-medium transition">
+                      className="text-sm bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 disabled:opacity-50 font-medium transition">
                       {savingMao ? '...' : '+ Agregar'}
                     </button>
                   </form>
@@ -1061,7 +1061,7 @@ export default function DetalleCotizacion() {
                         onClick={() => cambiarGanancia(opt.tipo)}
                         className={`py-3 px-4 rounded-xl border-2 text-left transition ${
                           cot.tipoAcabado === opt.tipo
-                            ? 'border-blue-600 bg-blue-50'
+                            ? 'border-emerald-600 bg-emerald-50'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}>
                         <p className="text-sm font-semibold text-gray-800">{opt.label}</p>
@@ -1069,7 +1069,7 @@ export default function DetalleCotizacion() {
                       </button>
                     ))}
                     <div className={`py-3 px-4 rounded-xl border-2 transition ${
-                      cot.tipoAcabado === 'manual' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'
+                      cot.tipoAcabado === 'manual' ? 'border-emerald-600 bg-emerald-50' : 'border-gray-200'
                     }`}>
                       <p className="text-xs font-semibold text-gray-600 mb-1">Manual</p>
                       <div className="flex items-center gap-1">
@@ -1077,7 +1077,7 @@ export default function DetalleCotizacion() {
                           defaultValue={cot.tipoAcabado === 'manual' ? cot.porcentajeGanancia : ''}
                           placeholder="0"
                           id="inputGananciaManual"
-                          className="w-16 border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-400"
+                          className="w-16 border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-400"
                         />
                         <span className="text-xs text-gray-500">%</span>
                         <button type="button"
@@ -1102,7 +1102,7 @@ export default function DetalleCotizacion() {
                       value={descuentoInput}
                       onChange={e => setDescuentoInput(e.target.value)}
                       placeholder="0.00"
-                      className="w-36 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-36 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     />
                     <button type="button" onClick={aplicarDescuento} disabled={savingDesc}
                       className="text-sm bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:opacity-50 font-medium transition">
@@ -1224,7 +1224,7 @@ export default function DetalleCotizacion() {
               <div>
                 <span className={`text-xs px-2 py-1 rounded-full border font-medium inline-block mb-2 ${
                   proyecto.estado === 'finalizado' ? 'bg-emerald-100 text-emerald-700 border-emerald-200' :
-                  proyecto.estado === 'en_proceso' ? 'bg-blue-100 text-blue-700 border-blue-200' :
+                  proyecto.estado === 'en_proceso' ? 'bg-emerald-100 text-emerald-700 border-emerald-200' :
                   'bg-amber-100 text-amber-700 border-amber-200'
                 }`}>
                   {proyecto.estado === 'en_proceso' ? 'En proceso' :
@@ -1251,11 +1251,11 @@ export default function DetalleCotizacion() {
                     <input value={proyectoForm.nombre}
                       onChange={e => setProyectoForm({ ...proyectoForm, nombre: e.target.value })}
                       placeholder="Nombre del proyecto"
-                      className="w-full border border-gray-300 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full border border-gray-300 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500"
                       required />
                     <input type="date" value={proyectoForm.fechaEntrega}
                       onChange={e => setProyectoForm({ ...proyectoForm, fechaEntrega: e.target.value })}
-                      className="w-full border border-gray-300 rounded-lg px-2 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                      className="w-full border border-gray-300 rounded-lg px-2 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500" />
                     <div className="flex gap-2">
                       <button type="submit" disabled={creandoProyecto}
                         className="flex-1 text-xs bg-emerald-600 text-white py-1.5 rounded-lg hover:bg-emerald-700 disabled:opacity-50 font-medium">

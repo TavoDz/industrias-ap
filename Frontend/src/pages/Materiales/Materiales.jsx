@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { materialesService } from '../../services'
 
 const formInicial = { nombre: '', tipo: '', grosor: '', largo: '', ancho: '', precioTablero: '' }
@@ -94,7 +94,7 @@ export default function Materiales() {
         </div>
         <button
           onClick={abrirNuevo}
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+          className="bg-emerald-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-emerald-700 transition"
         >
           + Nuevo material
         </button>
@@ -115,7 +115,7 @@ export default function Materiales() {
               <input
                 value={form.nombre}
                 onChange={e => setForm({ ...form, nombre: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -125,7 +125,7 @@ export default function Materiales() {
                 value={form.tipo}
                 onChange={e => setForm({ ...form, tipo: e.target.value })}
                 placeholder="melamina, MDF, plywood..."
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
             <div>
@@ -136,12 +136,12 @@ export default function Materiales() {
                   step="0.001"
                   value={form.grosor}
                   onChange={e => setForm({ ...form, grosor: e.target.value })}
-                  className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
                 <select
                   value={unidadGrosor}
                   onChange={e => { setUnidadGrosor(e.target.value); setForm({ ...form, grosor: '' }) }}
-                  className="border border-gray-300 rounded px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="border border-gray-300 rounded px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 >
                   <option value="mm">mm</option>
                   <option value="in">pulg</option>
@@ -159,7 +159,7 @@ export default function Materiales() {
                 type="number"
                 value={form.largo}
                 onChange={e => setForm({ ...form, largo: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
             <div>
@@ -168,7 +168,7 @@ export default function Materiales() {
                 type="number"
                 value={form.ancho}
                 onChange={e => setForm({ ...form, ancho: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
             <div>
@@ -178,7 +178,7 @@ export default function Materiales() {
                 step="0.01"
                 value={form.precioTablero}
                 onChange={e => setForm({ ...form, precioTablero: e.target.value })}
-                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
             <div className="col-span-2 flex gap-2 justify-end">
@@ -191,7 +191,7 @@ export default function Materiales() {
               </button>
               <button
                 type="submit"
-                className="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                className="text-sm px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700"
               >
                 Guardar
               </button>
@@ -206,7 +206,7 @@ export default function Materiales() {
           value={buscar}
           onChange={e => setBuscar(e.target.value)}
           placeholder="Buscar por nombre o tipo..."
-          className="border border-gray-300 rounded-lg px-3 py-2 text-sm w-72 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-300 rounded-lg px-3 py-2 text-sm w-72 focus:outline-none focus:ring-2 focus:ring-emerald-500"
         />
         {buscar && (
           <span className="text-xs text-gray-400">
@@ -239,7 +239,7 @@ export default function Materiales() {
                       <div>
                         <p className="text-gray-400 text-sm mb-2">No hay materiales registrados</p>
                         <button onClick={abrirNuevo}
-                          className="text-sm text-blue-600 hover:underline font-medium">
+                          className="text-sm text-emerald-600 hover:underline font-medium">
                           Agregar primer material →
                         </button>
                       </div>
@@ -258,7 +258,7 @@ export default function Materiales() {
                   <td className="px-4 py-3 text-gray-600">{m.ancho} mm</td>
                   <td className="px-4 py-3 font-medium text-gray-700">Q{Number(m.precioTablero).toFixed(2)}</td>
                   <td className="px-4 py-3 flex gap-3 justify-end">
-                    <button onClick={() => abrirEditar(m)} className="text-xs text-blue-600 hover:underline">Editar</button>
+                    <button onClick={() => abrirEditar(m)} className="text-xs text-emerald-600 hover:underline">Editar</button>
                     <button onClick={() => eliminar(m.id, m.nombre)} className="text-xs text-red-500 hover:underline">Eliminar</button>
                   </td>
                 </tr>

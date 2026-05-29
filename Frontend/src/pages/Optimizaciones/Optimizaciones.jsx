@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { optimizacionesService } from '../../services'
 
@@ -86,7 +86,7 @@ export default function Optimizaciones() {
         </div>
         <button
           onClick={() => navigate('/optimizador')}
-          className="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition font-medium shadow-sm">
+          className="bg-emerald-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-emerald-700 transition font-medium shadow-sm">
           + Nueva optimización
         </button>
       </div>
@@ -108,23 +108,23 @@ export default function Optimizaciones() {
               value={buscar}
               onChange={e => setBuscar(e.target.value)}
               placeholder="Nombre, descripción o material..."
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
             />
           </div>
           <div>
             <label className="block text-xs font-medium text-gray-500 mb-1">Desde</label>
             <input type="date" value={desde} onChange={e => setDesde(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent" />
           </div>
           <div>
             <label className="block text-xs font-medium text-gray-500 mb-1">Hasta</label>
             <input type="date" value={hasta} onChange={e => setHasta(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent" />
           </div>
         </div>
         <div className="flex gap-2 mt-3">
           <button type="submit"
-            className="text-sm bg-blue-600 text-white px-4 py-1.5 rounded-lg hover:bg-blue-700 transition font-medium">
+            className="text-sm bg-emerald-600 text-white px-4 py-1.5 rounded-lg hover:bg-emerald-700 transition font-medium">
             Buscar
           </button>
           <button type="button" onClick={limpiarFiltros}
@@ -143,7 +143,7 @@ export default function Optimizaciones() {
         <div className="bg-white border border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center py-16 text-center">
           <p className="text-gray-400 text-sm">No hay optimizaciones guardadas</p>
           <button onClick={() => navigate('/optimizador')}
-            className="mt-3 text-sm text-blue-600 hover:underline font-medium">
+            className="mt-3 text-sm text-emerald-600 hover:underline font-medium">
             Crear primera optimización →
           </button>
         </div>
@@ -164,7 +164,7 @@ export default function Optimizaciones() {
                       <p className="text-xs text-gray-400 mt-0.5 truncate">{opt.descripcion}</p>
                     )}
                   </div>
-                  <span className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full font-medium whitespace-nowrap shrink-0">
+                  <span className="text-xs bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-full font-medium whitespace-nowrap shrink-0">
                     {opt.materialNombre}
                   </span>
                 </div>
@@ -208,7 +208,7 @@ export default function Optimizaciones() {
                   <div className="flex items-center justify-between text-xs text-gray-400">
                     <span>Cotización</span>
                     <button onClick={() => navigate(`/cotizaciones/${opt.cotizacionId}`)}
-                      className="text-blue-500 hover:underline">#{opt.cotizacionId}</button>
+                      className="text-emerald-500 hover:underline">#{opt.cotizacionId}</button>
                   </div>
                 )}
               </div>
@@ -216,7 +216,7 @@ export default function Optimizaciones() {
               {/* Acciones */}
               <div className="px-5 pb-4 pt-1 flex gap-2 flex-wrap">
                 <button onClick={() => abrir(opt.id)}
-                  className="flex-1 text-xs bg-blue-600 text-white px-3 py-1.5 rounded-lg hover:bg-blue-700 transition font-medium text-center">
+                  className="flex-1 text-xs bg-emerald-600 text-white px-3 py-1.5 rounded-lg hover:bg-emerald-700 transition font-medium text-center">
                   Abrir
                 </button>
                 <button onClick={() => reejecutar(opt.id)}
